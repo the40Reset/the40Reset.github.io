@@ -1,184 +1,172 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY6N54TD0"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-EDY6N54TD0');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EDY6N54TD0');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The 40 Reset™ | Career Reality Check</title>
-  <meta name="description" content="The 40 Reset membantu profesional memahami apa yang sebenarnya sedang terjadi dengan karier mereka sebelum mengambil keputusan besar." />
+  <meta name="description" content="The 40 Reset membantu profesional memahami apa yang sebenarnya sedang terjadi dengan karier, finansial, energi, leadership, dan tekanan kantor sebelum mengambil keputusan besar." />
   <meta name="theme-color" content="#050505" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#030303; --panel:#0b0b0b; --line:rgba(255,255,255,.13); --lineGold:rgba(245,183,57,.45);
-      --text:#fff7ec; --muted:#c6b9a7; --gold:#f4b943; --gold2:#ffd66d;
-      --shadow:0 28px 90px rgba(0,0,0,.62); --max:1180px;
+      --bg:#030303;--panel:#080808;--card:#0d0d0d;--card2:#171309;
+      --text:#fff7ec;--muted:#c9bcae;--soft:#efe2cf;
+      --gold:#f4b943;--gold2:#ffd66d;--blue:#66c7ff;--red:#ff5b4f;
+      --line:rgba(255,255,255,.13);--line2:rgba(255,255,255,.08);--lineGold:rgba(244,185,67,.50);
+      --max:1240px;--shadow:0 28px 90px rgba(0,0,0,.58);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;background:radial-gradient(circle at 15% 5%,rgba(244,185,67,.11),transparent 25%),var(--bg);
-      color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+      margin:0;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 18% -8%,rgba(244,185,67,.14),transparent 32%),
+        radial-gradient(circle at 86% 4%,rgba(255,214,109,.08),transparent 25%),
+        linear-gradient(180deg,#030303 0%,#060606 48%,#030303 100%);
+      overflow-x:hidden;
     }
     a{color:inherit;text-decoration:none}
-    .nav{position:sticky;top:0;z-index:99;background:rgba(3,3,3,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-inner{max-width:var(--max);margin:auto;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}
-    .brand{font-size:19px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .nav{position:sticky;top:0;z-index:70;background:rgba(3,3,3,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line2)}
+    .nav-inner{max-width:var(--max);margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .brand{font-weight:950;letter-spacing:.10em;font-size:18px;white-space:nowrap;line-height:1}
     .brand span,.gold{color:var(--gold)}
-    .links{display:flex;gap:26px;align-items:center;font-size:13px;color:#eee4d5;font-weight:700}
-    .outline{border:1px solid var(--lineGold);background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;padding:10px 16px;border-radius:10px;font-weight:900}
+    .byline{display:block;margin-top:4px;font-size:11px;letter-spacing:0;color:#d9cdbb;font-weight:700}
+    .links{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:850;color:#eee1cf}
+    .links .pill{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;border-radius:12px;padding:11px 15px;font-weight:950;box-shadow:0 14px 32px rgba(244,185,67,.22)}
 
-    .hero{
-      position:relative;min-height:88vh;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.10);
-      background-image:linear-gradient(90deg,rgba(3,3,3,.98) 0%,rgba(3,3,3,.86) 36%,rgba(3,3,3,.34) 67%,rgba(3,3,3,.72) 100%),url('hero.png');
-      background-size:cover;background-position:center;
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.09)}
+    .hero:before{content:"";position:absolute;inset:-20%;background:linear-gradient(115deg,rgba(244,185,67,.18),transparent 28%,rgba(255,255,255,.04) 54%,transparent 72%);transform:rotate(-4deg)}
+    .hero-inner{position:relative;max-width:var(--max);margin:auto;padding:64px 20px 28px;text-align:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:12px;font-weight:950;letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px}
+    .eyebrow:before,.eyebrow:after{content:"";width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+    .eyebrow:after{background:linear-gradient(90deg,var(--gold),transparent)}
+    h1{max-width:980px;margin:0 auto;font-size:clamp(42px,7vw,86px);line-height:.96;letter-spacing:-.075em;font-weight:950}
+    .hero h1 .break{display:block}
+    .sub{max-width:740px;margin:22px auto 0;color:#e8ddcc;font-size:18px;line-height:1.65}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.16);border-radius:13px;padding:14px 18px;font-weight:950;font-size:14px;background:rgba(255,255,255,.06)}
+    .btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;border:0;box-shadow:0 18px 40px rgba(244,185,67,.25)}
+    .trust-row{max-width:760px;margin:26px auto 0;display:flex;justify-content:center;gap:22px;flex-wrap:wrap;color:#f0e4d2;font-weight:850;font-size:13px}
+    .trust-row span{display:inline-flex;align-items:center;gap:8px}
+    .trust-row b{color:var(--gold2)}
+
+    .experience-shell{max-width:var(--max);margin:0 auto;padding:30px 20px 50px;position:relative}
+    .experience-head{text-align:center;margin-bottom:20px}
+    .experience-head h2{margin:0;font-size:clamp(30px,5vw,58px);letter-spacing:-.065em;line-height:1}
+    .experience-head h2 span{color:var(--gold)}
+    .experience-head p{max-width:680px;margin:10px auto 0;color:var(--muted);line-height:1.55;font-weight:650}
+
+    .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .exp-card{
+      position:relative;height:252px;border:1px solid var(--line);border-radius:21px;overflow:hidden;
+      background:
+        radial-gradient(circle at 88% 12%,rgba(244,185,67,.18),transparent 34%),
+        linear-gradient(145deg,rgba(255,255,255,.070),rgba(255,255,255,.017));
+      box-shadow:0 20px 70px rgba(0,0,0,.36);padding:18px;transition:.22s ease;isolation:isolate;
+      display:flex;flex-direction:column;justify-content:space-between;
     }
-    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 35%,rgba(244,185,67,.20),transparent 25%),linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.62))}
-    .hero-inner{position:relative;max-width:var(--max);margin:auto;padding:76px 22px 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
-    .eyebrow{color:var(--gold);letter-spacing:.25em;font-size:12px;font-weight:900;text-transform:uppercase;margin-bottom:16px}
-    h1{font-size:clamp(40px,5.5vw,70px);line-height:1.01;letter-spacing:-.075em;margin:0 0 24px;font-weight:900;text-shadow:0 12px 38px rgba(0,0,0,.55)}
-    .hero p{font-size:18px;line-height:1.7;color:#e9ddcb;max-width:650px;margin:0 0 18px}
-    .proof{display:flex;gap:12px;align-items:flex-start;margin:22px 0;color:#f5e7d3;font-weight:850;line-height:1.45;max-width:650px}
-    .proof .circle{width:40px;height:40px;border-radius:50%;border:1px solid var(--lineGold);display:grid;place-items:center;color:var(--gold);flex:none;font-size:13px}
-    .actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 21px;border-radius:12px;font-weight:900;font-size:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07)}
-    .btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;border:0;box-shadow:0 18px 38px rgba(244,185,67,.26)}
-    .question-card{justify-self:end;width:min(390px,100%);border:1px solid rgba(255,255,255,.15);border-radius:24px;background:rgba(0,0,0,.48);backdrop-filter:blur(16px);padding:25px;box-shadow:var(--shadow)}
-    .question-card h3{font-size:24px;line-height:1.05;letter-spacing:-.05em;margin:0 0 18px}
-    .q{display:flex;gap:10px;margin:13px 0;color:#eee2d1;font-weight:750;line-height:1.35}
-    .q:before{content:"“";color:var(--gold);font-size:30px;line-height:.8;font-weight:900}
-    .question-card b{display:block;color:var(--gold2);margin-top:18px;line-height:1.45}
+    .exp-card:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(244,185,67,.07));opacity:0;transition:.22s}
+    .exp-card:hover{transform:translateY(-5px);border-color:rgba(244,185,67,.62)}
+    .exp-card:hover:before{opacity:1}
+    .topline{display:flex;justify-content:space-between;align-items:flex-start;min-height:32px;position:relative;z-index:1}
+    .num{height:32px;min-width:42px;border:1px solid rgba(244,185,67,.55);display:inline-flex;align-items:center;justify-content:center;border-radius:9px;color:var(--gold2);font-size:13px;font-weight:950;letter-spacing:.10em;background:rgba(0,0,0,.25)}
+    .badge{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:950;letter-spacing:.05em}
+    .badge.free{background:linear-gradient(135deg,#9be2ff,#278fd0);color:#fff}
+    .badge.viral{background:linear-gradient(135deg,#ffb766,#ff4b3f);color:#fff;transform:rotate(5deg)}
+    .badge.new{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109}
+    .card-body{position:relative;z-index:1;display:grid;grid-template-columns:108px 1fr;gap:18px;align-items:center;min-height:132px}
+    .icon-wrap{height:104px;display:flex;align-items:center;justify-content:center}
+    .icon-wrap svg{width:92px;height:92px;fill:none;stroke:var(--gold2);stroke-width:3.1;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 18px rgba(244,185,67,.52))}
+    .icon-wrap svg .fill{fill:var(--gold2);stroke:none}
+    .card-copy h3{font-size:24px;line-height:1.02;letter-spacing:-.055em;margin:0 0 9px;font-weight:950}
+    .card-copy p{color:#dfd3c2;line-height:1.42;font-size:14px;margin:0}
+    .mini-btn{position:relative;z-index:1;align-self:flex-end;min-width:152px;text-align:center;border:1px solid rgba(244,185,67,.58);color:var(--gold2);border-radius:12px;padding:10px 14px;font-size:13px;font-weight:950;background:rgba(0,0,0,.22)}
+    .mini-btn b{margin-left:8px}
+    .exp-card:nth-child(2) .mini-btn,.exp-card:nth-child(8) .mini-btn{border-color:rgba(102,199,255,.70);color:#b9e9ff}
+    .exp-card:nth-child(7) .mini-btn{border-color:rgba(255,91,79,.70);color:#ff8b82}
 
-    .stats{position:relative;max-width:var(--max);margin:-42px auto 0;padding:0 22px;z-index:5;display:grid;grid-template-columns:repeat(4,1fr)}
-    .stat{border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.025));backdrop-filter:blur(18px);padding:22px 24px;min-height:116px}
-    .stat:first-child{border-left:1px solid rgba(255,255,255,.14);border-radius:18px 0 0 18px}
-    .stat:last-child{border-right:1px solid rgba(255,255,255,.14);border-radius:0 18px 18px 0}
-    .stat:not(:last-child){border-right:1px solid rgba(255,255,255,.09)}
-    .stat .big{font-size:38px;line-height:1;color:var(--gold2);font-weight:900;letter-spacing:-.07em}
-    .stat b{display:block;margin:5px 0}
-    .stat span{display:block;color:var(--muted);font-size:13px;line-height:1.35}
+    .ticker{border-block:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);overflow:hidden;white-space:nowrap}
+    .ticker-track{display:inline-flex;gap:24px;padding:14px 0;animation:ticker 32s linear infinite}
+    .ticker span{display:inline-flex;align-items:center;gap:10px;color:#f1e5d4;font-weight:900}
+    .ticker span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    @keyframes ticker{to{transform:translateX(-50%)}}
 
-    .section{max-width:var(--max);margin:auto;padding:54px 22px}
-    .section-head{text-align:center;margin:6px 0 30px}
-    .section-head.left{text-align:left}
-    .section-head h2{font-size:36px;line-height:1.05;letter-spacing:-.055em;margin:0}
-    .section-head p{max-width:760px;margin:14px auto 0;color:var(--muted);line-height:1.65}
+    .section{max-width:var(--max);margin:auto;padding:56px 20px}
+    .section-title{text-align:center;margin-bottom:26px}
+    .section-title h2{font-size:clamp(30px,5vw,52px);line-height:1;letter-spacing:-.065em;margin:0}
+    .section-title p{color:var(--muted);max-width:720px;margin:14px auto 0;line-height:1.6}
+    .results-wrap{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.035);padding:18px;box-shadow:var(--shadow)}
+    .results-track{display:flex;gap:16px;width:max-content;animation:slideResults 52s linear infinite}
+    .results-wrap:hover .results-track{animation-play-state:paused}
+    .phone{width:210px;flex:0 0 auto;border:1px solid rgba(255,255,255,.14);border-radius:26px;background:#050505;padding:9px;box-shadow:0 16px 40px rgba(0,0,0,.48)}
+    .phone img{width:100%;height:390px;object-fit:cover;border-radius:19px;display:block}
+    @keyframes slideResults{to{transform:translateX(-50%)}}
 
-    .reality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .reality{
-      border:1px solid rgba(255,255,255,.14);border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
-      padding:20px;font-weight:800;color:#efe4d4;min-height:96px;display:flex;align-items:center;gap:12px;
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .testi{border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018));padding:22px;min-height:215px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote{font-size:38px;line-height:.8;color:var(--gold);font-weight:950}
+    .testi p{color:#eadfce;line-height:1.58;margin:8px 0 18px}
+    .person{font-size:12px;color:var(--muted);font-weight:850}
+    .person b{display:block;color:#fff2df;font-size:14px;margin-bottom:3px}
+
+    .story{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
+    .panel{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));padding:30px}
+    .panel h2{font-size:36px;line-height:1;letter-spacing:-.06em;margin:0 0 18px}
+    .panel p{color:#ded3c3;line-height:1.72;margin:0 0 14px}
+    .founder-card{border-color:var(--lineGold);background:radial-gradient(circle at 12% 12%,rgba(244,185,67,.16),transparent 34%),linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.018))}
+    .role{color:var(--gold2);font-size:18px;font-weight:950;margin:8px 0 20px}
+    .final-cta{border:1px solid var(--lineGold);border-radius:26px;background:linear-gradient(135deg,rgba(244,185,67,.16),rgba(255,255,255,.035));padding:42px;text-align:center;box-shadow:var(--shadow)}
+    .final-cta h2{font-size:clamp(32px,5vw,56px);line-height:1;letter-spacing:-.065em;margin:0 0 16px}
+    .final-cta p{color:#ebdfce;line-height:1.6;max-width:720px;margin:0 auto 24px}
+
+    .activity-pop{
+      position:fixed;left:18px;bottom:18px;z-index:90;width:min(310px,calc(100vw - 36px));
+      border:1px solid rgba(244,185,67,.42);border-radius:16px;background:rgba(8,8,8,.90);
+      backdrop-filter:blur(16px);box-shadow:0 18px 55px rgba(0,0,0,.56);padding:14px 15px;
+      transform:translateY(18px);opacity:0;pointer-events:none;transition:.35s ease;
     }
-    .reality span{width:28px;height:28px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-weight:900;flex:none}
+    .activity-pop.show{transform:translateY(0);opacity:1}
+    .activity-label{font-size:11px;color:var(--gold);letter-spacing:.14em;font-weight:950;text-transform:uppercase;margin-bottom:6px}
+    .activity-text{font-size:14px;color:#fff1de;font-weight:850;line-height:1.35}
+    .activity-time{font-size:12px;color:var(--muted);margin-top:5px}
 
-    .pain-box,.testi-wrap,.founder,.all-exp,.bottom-cta,.why-box,.finding-box{border:1px solid rgba(255,255,255,.14);border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.015));box-shadow:0 18px 60px rgba(0,0,0,.32)}
-    .why-box,.finding-box{padding:28px}
-    .why-box h2,.finding-box h2{font-size:30px;line-height:1.04;letter-spacing:-.055em;margin:0 0 22px}
-    .why-box p,.finding-box p{font-size:17px;line-height:1.72;color:#ded3c3;margin:0 0 14px}
-
-    .testi-wrap{padding:28px}
-    .testi-wrap h2{font-size:32px;line-height:1;margin:0 0 22px;letter-spacing:-.055em}
-    .testimonials{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .testimonial{min-height:260px;border:1px solid rgba(255,255,255,.13);background:rgba(0,0,0,.25);border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
-    .testimonial .quote-mark{font-size:42px;line-height:.7;color:var(--gold);font-weight:900}
-    .testimonial p{font-size:14px;line-height:1.52;color:#eee1d0;margin:8px 0 18px}
-    .person{font-size:12px;color:var(--muted);font-weight:800;line-height:1.45}
-    .person b{display:block;color:#fff1db;font-size:13px}
-
-    .founder{padding:0;overflow:hidden;display:grid;grid-template-columns:280px 1fr;align-items:center;background:linear-gradient(120deg,#080808,#101010 58%,#060606)}
-    .founder-photo{padding:28px;display:flex;align-items:center;justify-content:center;background:#111}
-    .founder-photo img{width:100%;max-width:230px;height:auto;object-fit:contain;object-position:center;display:block;border-radius:16px}
-    .founder-copy{padding:42px 44px}
-    .founder-copy h2{font-size:42px;line-height:1;letter-spacing:-.06em;margin:0 0 10px}
-    .role{font-size:18px;color:var(--gold);font-weight:900;margin-bottom:22px}
-    .founder-copy p{font-size:16px;line-height:1.72;color:#ded3c3;margin:0 0 15px;max-width:760px}
-
-    .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .tool{position:relative;min-height:334px;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:#111;box-shadow:0 16px 52px rgba(0,0,0,.36);transition:.2s ease}
-    .tool:hover{transform:translateY(-4px);border-color:rgba(244,185,67,.48)}
-    .tool.featured{grid-column:span 2}
-    .tool img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.06) brightness(.68)}
-    .tool:before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.34) 39%,rgba(0,0,0,.94) 100%)}
-    .badge{position:absolute;z-index:3;top:16px;left:16px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;letter-spacing:.05em}
-    .badge.viral{right:16px;left:auto;transform:rotate(8deg);background:linear-gradient(135deg,#ffb25e,#ff6b2c)}
-    .content{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:22px}
-    .mini{font-size:13px;line-height:1.35;color:#eed9ad;margin-bottom:9px;font-weight:850}
-    .tool h3{font-size:25px;line-height:1.08;letter-spacing:-.055em;margin:0 0 10px;font-weight:900}
-    .tool p{font-size:14px;line-height:1.5;color:#dbcfbd;margin:0;max-width:96%}
-    .tool .cta-mini{display:inline-flex;margin-top:16px;border:1px solid rgba(244,185,67,.55);color:var(--gold2);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900}
-
-    .finding-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .finding{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(0,0,0,.24);padding:20px;min-height:150px}
-    .finding b{display:block;color:var(--gold2);font-size:15px;margin-bottom:10px}
-    .finding p{font-size:14px;line-height:1.52;color:#ded3c3;margin:0}
-
-    .all-exp{padding:28px}
-    .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
-    .exp{min-height:94px;border:1px solid rgba(255,255,255,.11);border-radius:14px;background:rgba(0,0,0,.22);display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;text-align:center;padding:10px;font-size:12px;font-weight:800;color:#efe4d4}
-    .exp span{font-size:24px}
-
-    .bottom-cta{position:relative;overflow:hidden;margin-top:28px;background-image:linear-gradient(90deg,rgba(3,3,3,.96) 0%,rgba(3,3,3,.70) 50%,rgba(3,3,3,.35) 100%),url('hero.png');background-size:cover;background-position:center;padding:46px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px}
-    .bottom-cta h2{font-size:38px;line-height:1.05;letter-spacing:-.055em;margin:4px 0 0;max-width:650px}
-    .footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 22px;color:#8d8376;font-size:12px}
-    .footer-inner{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    .footer-links{display:flex;gap:25px}
+    .footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 20px;color:#8f8578;font-size:12px}
+    .footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     @media(max-width:980px){
-      .links a:not(.outline){display:none}
-      .hero-inner{grid-template-columns:1fr;padding-top:58px}
-      .question-card{justify-self:stretch}
-      .stats{grid-template-columns:1fr 1fr;margin-top:0;padding-top:18px}
-      .stat:nth-child(1){border-radius:18px 0 0 0}
-      .stat:nth-child(2){border-radius:0 18px 0 0;border-right:1px solid rgba(255,255,255,.14)}
-      .stat:nth-child(3){border-left:1px solid rgba(255,255,255,.14);border-radius:0 0 0 18px}
-      .stat:nth-child(4){border-radius:0 0 18px 0}
-      .reality-grid,.tools,.finding-grid{grid-template-columns:1fr 1fr}
-      .tool.featured{grid-column:span 1}
-      .testimonials{grid-template-columns:1fr 1fr}
-      .founder{grid-template-columns:1fr}
-      .founder-photo{padding:22px}
-      .exp-grid{grid-template-columns:repeat(3,1fr)}
-      .bottom-cta{display:block}
-      .bottom-cta .btn{margin-top:22px}
+      .links a:not(.pill){display:none}
+      .exp-grid{grid-template-columns:1fr}
+      .exp-card{height:auto;min-height:246px}
+      .story,.testimonials{grid-template-columns:1fr}
+      .phone{width:190px}.phone img{height:355px}
     }
-    @media(max-width:560px){
-      .nav-inner{padding:13px 16px}
-      .brand{font-size:15px}
-      .outline{font-size:12px;padding:9px 11px}
-      .hero{min-height:92vh;background-position:center}
-      .hero-inner{padding:42px 18px 34px}
-      h1{font-size:38px;letter-spacing:-.06em}
-      .hero p{font-size:15.5px;line-height:1.62}
-      .proof{font-size:14px}
-      .question-card{padding:20px;border-radius:18px}
-      .question-card h3{font-size:22px}
-      .q{font-size:14px}
-      .stats{grid-template-columns:1fr;padding:18px 16px 0}
-      .stat,.stat:first-child,.stat:last-child,.stat:nth-child(2),.stat:nth-child(3){border:1px solid rgba(255,255,255,.14);border-radius:14px;margin-bottom:10px}
-      .section{padding:36px 16px}
-      .section-head h2{font-size:29px}
-      .reality-grid,.testimonials,.tools,.finding-grid{grid-template-columns:1fr}
-      .testi-wrap,.why-box,.finding-box{padding:22px}
-      .testimonial{min-height:auto}
-      .founder-copy{padding:30px 24px}
-      .founder-copy h2{font-size:35px}
-      .founder-copy p{font-size:15px;line-height:1.68}
-      .tool{min-height:318px}
-      .all-exp{padding:22px}
-      .exp-grid{grid-template-columns:1fr 1fr}
-      .bottom-cta{padding:34px 24px}
-      .bottom-cta h2{font-size:31px}
-      .footer-inner{display:block;text-align:center}
-      .footer-links{justify-content:center;margin-top:14px;flex-wrap:wrap}
+    @media(max-width:640px){
+      .nav-inner{padding:12px 15px}.brand{font-size:15px}.links .pill{padding:9px 10px;font-size:12px}
+      .hero-inner{padding:48px 15px 24px;text-align:left}
+      .eyebrow:before,.eyebrow:after{display:none}
+      h1{font-size:40px;margin:0}
+      .sub{font-size:15.5px;margin-left:0;margin-right:0}
+      .actions{justify-content:flex-start}
+      .trust-row{justify-content:flex-start}
+      .experience-shell,.section{padding-left:15px;padding-right:15px}
+      .experience-head{text-align:left}
+      .exp-card{height:auto;min-height:270px;padding:17px}
+      .card-body{grid-template-columns:82px 1fr;gap:14px;min-height:140px}
+      .icon-wrap{height:86px}
+      .icon-wrap svg{width:76px;height:76px}
+      .card-copy h3{font-size:22px}
+      .card-copy p{font-size:14px;line-height:1.48}
+      .mini-btn{align-self:stretch}
+      .results-wrap{padding:12px;border-radius:18px}
+      .phone{width:168px;border-radius:22px}.phone img{height:315px;border-radius:16px}
+      .panel{padding:24px}.panel h2{font-size:31px}
+      .final-cta{padding:30px 20px}
     }
   </style>
 </head>
@@ -186,266 +174,246 @@ gtag('config', 'G-EDY6N54TD0');
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#">THE <span>40</span> RESET™</a>
+      <a class="brand" href="#">THE <span>40</span> RESET™ <span class="byline">By Dhimas Garendi</span></a>
       <div class="links">
-        <a href="#mulai">Mulai Di Sini</a>
-        <a href="#testimoni">Apa Kata Mereka</a>
-        <a href="#founder">Tentang</a>
         <a href="#experience">Experience</a>
-        <a class="outline" href="#mulai">Mulai Di Sini</a>
+        <a href="#hasil">Contoh Hasil</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#tentang">Tentang</a>
+        <a class="pill" href="#experience">Mulai Di Sini</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero" id="top">
+  <header class="hero">
     <div class="hero-inner">
-      <div>
-        <div class="eyebrow">THE 40 RESET™</div>
-        <h1>Bingung Harus Bertahan, Resign, Sedang Di-Manage Out, Akan Kena Layoff, Atau Harus Cari Jalan Lain?</h1>
-        <p>Sebelum mengambil keputusan yang bisa mengubah beberapa tahun hidup lo, pastikan lo paham apa yang sebenarnya sedang terjadi.</p>
-        <div class="proof">
-          <div class="circle">16+</div>
-          <div>Berdasarkan 16+ tahun pengalaman melihat ribuan keputusan karier dari dalam perusahaan.</div>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="#mulai">Mulai Di Sini →</a>
-          <a class="btn" href="#founder">Siapa Di Balik Ini?</a>
-        </div>
+      <div class="eyebrow">THE 40 RESET™</div>
+      <h1>Sebelum Mengambil Keputusan Yang Bisa Mengubah Beberapa Tahun Hidup Lo.</h1>
+      <p class="sub">Pahami dulu apa yang sebenarnya sedang terjadi. Lewat 9 experience interaktif untuk membaca situasi karier, finansial, energi, leadership, dan tekanan kantor sebelum mengambil langkah berikutnya.</p>
+      <div class="actions">
+        <a class="btn primary" href="#experience">Pilih Titik Masuk Lo →</a>
+        <a class="btn" href="#hasil">Lihat Contoh Hasil</a>
       </div>
-
-      <aside class="question-card">
-        <h3>Mungkin Lo Lagi Bertanya...</h3>
-        <div class="q">Gue harus resign?</div>
-        <div class="q">Gue lagi di-manage out?</div>
-        <div class="q">Akan kena layoff?</div>
-        <div class="q">Salah karier?</div>
-        <div class="q">Salah kantor?</div>
-        <div class="q">Atau cuma lagi capek?</div>
-        <b>Di sini, lo bisa mulai mencari jawabannya.</b>
-      </aside>
+      <div class="trust-row">
+        <span>🛡️ <b>Aman</b> & privasi terjaga</span>
+        <span>🔒 Tanpa registrasi</span>
+        <span>⚡ Hasil langsung</span>
+      </div>
     </div>
   </header>
 
-  <div class="stats">
-    <div class="stat"><div class="big">16+</div><b>Years Experience</b><span>Melihat dunia kerja dari dua sisi meja.</span></div>
-    <div class="stat"><div class="big">34</div><b>Employee Archetypes</b><span>Pola karyawan yang sering muncul di dunia kerja.</span></div>
-    <div class="stat"><div class="big">9</div><b>Career Experiences</b><span>Experience seru untuk bantu baca situasi karier lo.</span></div>
-    <div class="stat"><div class="big">100%</div><b>Self Reflection</b><span>Bukan motivasi kosong. Bukan jawaban instan.</span></div>
-  </div>
-
   <main>
-    <section class="section">
-      <div class="section-head">
-        <div class="eyebrow">REALITY CHECK</div>
-        <h2>Sebagian Orang Datang Ke Sini Karena...</h2>
-        <p>Dan hampir semuanya datang dengan pertanyaan yang sama: “Sebenernya gue lagi kenapa di kantor?”</p>
+    <section class="experience-shell" id="experience">
+      <div class="experience-head">
+        <h2>9 Experiences.</h2>
+        <p>Pilih yang paling sesuai dengan kondisi lo saat ini.</p>
       </div>
-      <div class="reality-grid">
-        <div class="reality"><span>✓</span>Takut kena layoff</div>
-        <div class="reality"><span>✓</span>Curiga sedang di-manage out</div>
-        <div class="reality"><span>✓</span>Mau resign tapi belum yakin</div>
-        <div class="reality"><span>✓</span>Burnout tapi bingung penyebabnya</div>
-        <div class="reality"><span>✓</span>Karier terasa jalan di tempat</div>
-        <div class="reality"><span>✓</span>Bingung langkah berikutnya</div>
+      <div class="exp-grid">
+        <a class="exp-card" href="/Tes-Kesiapan-Resign/">
+          <div class="topline"><span class="num">01</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="25"/><circle cx="32" cy="32" r="15"/><circle cx="32" cy="32" r="5" class="fill"/><path d="M32 32 L51 14"/><circle cx="52" cy="13" r="4" class="fill"/></svg></div>
+            <div class="card-copy">
+              <h3>Career Reality Check™</h3>
+              <p>Buat lo yang mau resign, sedang di-manage out, atau mulai takut kena layoff.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Cek Kondisi Lo <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/office-match/">
+          <div class="topline"><span class="num">02</span><span class="badge free">FREE</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 18c12-6 22-6 33 0v11c0 13-9 22-16 25-8-3-17-12-17-25z"/><path d="M33 17c8-5 15-5 22-2v10c0 12-7 19-13 22"/><path d="M18 31c4 3 8 3 12 0M39 31c4 3 8 3 12 0"/></svg></div>
+            <div class="card-copy">
+              <h3>Office Match™</h3>
+              <p>Lihat kecocokan lo dengan atasan, lingkungan kerja, dan budaya perusahaan.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Cek Office Match <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/finansial-siap-resign/">
+          <div class="topline"><span class="num">03</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 21h39a7 7 0 0 1 7 7v24H10a6 6 0 0 1-6-6V27a6 6 0 0 1 6-6z"/><path d="M14 21l29-9 5 9"/><path d="M42 34h16v12H42a6 6 0 0 1 0-12z"/><circle cx="47" cy="40" r="2" class="fill"/></svg></div>
+            <div class="card-copy">
+              <h3>Finansial Siap Resign™</h3>
+              <p>Kalau penghasilan berhenti besok, uang lo bisa bertahan berapa lama?</p>
+            </div>
+          </div>
+          <span class="mini-btn">Hitung Sekarang <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/-quiz-tipe-karyawan/">
+          <div class="topline"><span class="num">04</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="22" cy="22" r="8"/><circle cx="43" cy="22" r="8"/><path d="M8 52c2-13 10-20 18-20s16 7 18 20"/><path d="M31 52c2-12 9-18 17-18 6 0 11 4 14 11"/></svg></div>
+            <div class="card-copy">
+              <h3>Tipe Karyawan™</h3>
+              <p>Cari tahu tipe karyawan lo, cara kerja terbaik, dan blind spot yang mungkin belum lo sadari.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Temukan Tipe Lo <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/career-survival-cv/">
+          <div class="topline"><span class="num">05</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M15 6h27l10 10v42H15z"/><path d="M42 6v11h10"/><path d="M24 30h16M24 39h20M24 48h14"/><circle cx="47" cy="47" r="10"/><path d="M42 47l4 4 8-10"/></svg></div>
+            <div class="card-copy">
+              <h3>Career Survival CV™</h3>
+              <p>CV Builder berdasarkan 16+ tahun pengalaman korporasi. Template proven, ATS friendly, export PDF.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Bangun CV <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/sekarang-ngapain/">
+          <div class="topline"><span class="num">06</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8v48"/><path d="M14 16h30l8 8-8 8H14z"/><path d="M50 34H20l-8 8 8 8h30z"/></svg></div>
+            <div class="card-copy">
+              <h3>Sekarang Ngapain™</h3>
+              <p>Belum resign. Belum pindah. Tapi stuck. Cari langkah paling masuk akal berikutnya.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Cari Arah Lo <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/survive-your-boss/">
+          <div class="topline"><span class="num">07</span><span class="badge viral">VIRAL</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 25h26a13 13 0 0 1 12 9l4 13a7 7 0 0 1-12 6l-5-6H20l-5 6a7 7 0 0 1-12-6l4-13a13 13 0 0 1 12-9z"/><path d="M19 36h12M25 30v12"/><circle cx="43" cy="35" r="2" class="fill"/><circle cx="50" cy="41" r="2" class="fill"/></svg></div>
+            <div class="card-copy">
+              <h3>Survive Your Boss™</h3>
+              <p>Game viral pelepas stres pekerja kantoran. Seru, lucu, dan bikin nagih.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Main Sekarang <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/seberapa-lelah-lu-hari-ini/">
+          <div class="topline"><span class="num">08</span><span class="badge free">FREE</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 9h25a6 6 0 0 1 6 6v37a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V15a6 6 0 0 1 6-6z"/><path d="M24 5h13"/><path d="M34 22l-9 15h10l-5 12 12-18H31z" class="fill"/></svg></div>
+            <div class="card-copy">
+              <h3>Office Fatigue Check™</h3>
+              <p>Cek seberapa lelah lo hari ini. Mungkin lo butuh break, reset, atau change.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Cek Sekarang <b>→</b></span>
+        </a>
+        <a class="exp-card" href="/leadership-reality-check/">
+          <div class="topline"><span class="num">09</span><span class="badge new">NEW</span></div>
+          <div class="card-body">
+            <div class="icon-wrap"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 51h44"/><path d="M13 45l4-26 14 17 13-24 10 33z"/><circle cx="17" cy="19" r="4" class="fill"/><circle cx="44" cy="12" r="4" class="fill"/><circle cx="54" cy="45" r="3" class="fill"/></svg></div>
+            <div class="card-copy">
+              <h3>Leadership Reality Check™</h3>
+              <p>Cara lo memimpin mungkin berbeda dengan cara tim lo melihat lo.</p>
+            </div>
+          </div>
+          <span class="mini-btn">Mulai Assessment <b>→</b></span>
+        </a>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="situasi ticker">
+      <div class="ticker-track">
+        <span>Mau resign tapi belum yakin</span><span>Takut kena layoff</span><span>Merasa salah kantor</span><span>Bingung arah karier</span><span>CV belum siap</span><span>Capek kerja tapi belum tahu penyebabnya</span><span>Butuh pelepas stres kantor</span><span>Ingin tahu cara tim melihat leadership lo</span><span>Butuh langkah berikutnya</span>
+        <span>Mau resign tapi belum yakin</span><span>Takut kena layoff</span><span>Merasa salah kantor</span><span>Bingung arah karier</span><span>CV belum siap</span><span>Capek kerja tapi belum tahu penyebabnya</span><span>Butuh pelepas stres kantor</span><span>Ingin tahu cara tim melihat leadership lo</span><span>Butuh langkah berikutnya</span>
+      </div>
+    </div>
+
+    <section class="section" id="hasil">
+      <div class="section-title">
+        <div class="eyebrow">CONTOH HASIL</div>
+        <h2>Bukan cuma klik. Lo dapat gambaran.</h2>
+        <p>Contoh layar hasil dari beberapa experience The 40 Reset.</p>
+      </div>
+      <div class="results-wrap">
+        <div class="results-track">
+          <div class="phone"><img loading="lazy" src="result-01.webp" alt="Contoh hasil The 40 Reset 1"></div><div class="phone"><img loading="lazy" src="result-02.webp" alt="Contoh hasil The 40 Reset 2"></div><div class="phone"><img loading="lazy" src="result-03.webp" alt="Contoh hasil The 40 Reset 3"></div><div class="phone"><img loading="lazy" src="result-04.webp" alt="Contoh hasil The 40 Reset 4"></div><div class="phone"><img loading="lazy" src="result-05.webp" alt="Contoh hasil The 40 Reset 5"></div><div class="phone"><img loading="lazy" src="result-06.webp" alt="Contoh hasil The 40 Reset 6"></div><div class="phone"><img loading="lazy" src="result-07.webp" alt="Contoh hasil The 40 Reset 7"></div><div class="phone"><img loading="lazy" src="result-08.webp" alt="Contoh hasil The 40 Reset 8"></div><div class="phone"><img loading="lazy" src="result-09.webp" alt="Contoh hasil The 40 Reset 9"></div>
+          <div class="phone"><img loading="lazy" src="result-01.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-02.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-03.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-04.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-05.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-06.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-07.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-08.webp" alt=""></div><div class="phone"><img loading="lazy" src="result-09.webp" alt=""></div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="testimoni">
-      <div class="testi-wrap">
-        <h2>Apa Kata Mereka?</h2>
-        <div class="testimonials">
-          <article class="testimonial"><div><div class="quote-mark">“</div><p>Gue beli karena mau validasi keputusan resign. The 40 Reset bantu gw ambil keputusan waras sebelum resign dan langkah-langkah apa saja yang harus gw lakukan.</p></div><div class="person"><b>AH</b>Marketing Manager • FMCG</div></article>
-          <article class="testimonial"><div><div class="quote-mark">“</div><p>Selama berbulan-bulan gue yakin mau kena PHK. The 40 Reset bantu gw untuk persiapan. Pada saat itu terjadi gw sudah well prepared.</p></div><div class="person"><b>DC</b>Operations Lead • Manufacturing</div></article>
-          <article class="testimonial"><div><div class="quote-mark">“</div><p>Yang paling bikin gue mikir adalah gue sadar selama ini burnout, bukan salah karier.</p></div><div class="person"><b>WS</b>HR Business Partner</div></article>
-          <article class="testimonial"><div><div class="quote-mark">“</div><p>Ini pertama kalinya gue lihat konten karier yang terasa seperti orang dalam perusahaan yang ngomong, bukan motivator.</p></div><div class="person"><b>VM</b>Finance Manager</div></article>
+      <div class="section-title">
+        <div class="eyebrow">APA KATA MEREKA</div>
+        <h2>Ini bukan konten motivasi karier biasa.</h2>
+      </div>
+      <div class="testimonials">
+        <article class="testi"><div><div class="quote">“</div><p>Gue beli karena mau validasi keputusan resign. Ini bantu gue ambil keputusan lebih waras sebelum lompat.</p></div><div class="person"><b>AH</b>Marketing Manager • FMCG</div></article>
+        <article class="testi"><div><div class="quote">“</div><p>Selama berbulan-bulan gue takut kena PHK. The 40 Reset bantu gue siapin skenario sebelum itu kejadian.</p></div><div class="person"><b>DC</b>Operations Lead • Manufacturing</div></article>
+        <article class="testi"><div><div class="quote">“</div><p>Yang paling bikin mikir: ternyata gue burnout, bukan salah karier.</p></div><div class="person"><b>WS</b>HR Business Partner</div></article>
+        <article class="testi"><div><div class="quote">“</div><p>Rasanya kayak dijelasin orang dalam perusahaan, bukan motivator yang cuma bilang semangat.</p></div><div class="person"><b>VM</b>Finance Manager</div></article>
+        <article class="testi"><div><div class="quote">“</div><p>Bagian finansialnya bikin gue sadar. Resign bukan cuma soal berani, tapi soal siap.</p></div><div class="person"><b>RA</b>Senior Analyst • Banking</div></article>
+        <article class="testi"><div><div class="quote">“</div><p>Survive Your Boss lucu banget, tapi nyindirnya kena. Jadi ketawa sambil mikir.</p></div><div class="person"><b>NF</b>Project Manager • Tech</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="tentang">
+      <div class="story">
+        <div class="panel">
+          <div class="eyebrow">WHY THE 40 RESET EXISTS</div>
+          <h2>Kenapa The 40 Reset dibuat?</h2>
+          <p>Banyak orang mengambil keputusan karier besar berdasarkan emosi, asumsi, atau tekanan sesaat.</p>
+          <p>The 40 Reset dibuat untuk membantu lo melihat situasi dengan lebih jelas sebelum mengambil langkah berikutnya.</p>
+          <p>Bukan untuk menyuruh orang resign. Bukan untuk memberi jawaban instan. Tapi untuk membantu lo membaca kondisi karier, uang, energi, lingkungan kerja, dan leadership dengan lebih jernih.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="why-box">
-        <div class="eyebrow">WHY THE 40 RESET EXISTS</div>
-        <h2>Kenapa The 40 Reset Dibuat?</h2>
-        <p>Banyak orang mengambil keputusan karier besar berdasarkan emosi, asumsi, atau tekanan sesaat.</p>
-        <p>The 40 Reset dibuat untuk membantu lo melihat situasi dengan lebih jelas sebelum mengambil langkah yang bisa memengaruhi beberapa tahun hidup lo.</p>
-      </div>
-    </section>
-
-    <section class="section" id="founder">
-      <div class="founder">
-        <div class="founder-photo"><img src="founder.png" alt="Dhimas Garendi"></div>
-        <div class="founder-copy">
-          <div class="eyebrow">SIAPA DI BALIK THE 40 RESET?</div>
+        <div class="panel founder-card">
+          <div class="eyebrow">DI BALIK THE 40 RESET</div>
           <h2>Dhimas Garendi</h2>
           <div class="role">16+ Years Corporate Experience</div>
-          <p>Selama lebih dari 16 tahun berkarier di dunia korporat, saya melihat banyak keputusan terkait rekrutmen, pengembangan karier, promosi, resign, dan perubahan organisasi.</p>
-          <p>Saya juga menghabiskan bertahun-tahun di level <strong>Head of Department</strong>, melihat langsung bagaimana keputusan besar memengaruhi individu, tim, dan bisnis.</p>
-          <p>Di usia 40 tahun, saya memilih melakukan reset dan melihat karier dari sudut pandang yang berbeda. Pengalaman itulah yang melahirkan <strong>The 40 Reset</strong>.</p>
-          <p>Bukan untuk menyuruh orang resign. Bukan untuk memberi jawaban instan. Tetapi untuk membantu profesional melihat situasi mereka dengan lebih jelas sebelum mengambil langkah berikutnya.</p>
+          <p>Dari staff sampai Head of Department. Melihat keputusan resign, promosi, rekrutmen, layoff, manage out, dan perubahan organisasi dari dekat.</p>
+          <p>Pengalaman itu jadi dasar The 40 Reset: cara membaca situasi sebelum mengambil keputusan besar.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="mulai">
-      <div class="section-head">
-        <div class="eyebrow">9 CAREER EXPERIENCES</div>
-        <h2>9 Experience Seru Untuk Baca Situasi Karier Lo.</h2>
-        <p>Bukan sekadar tools. Ini pengalaman interaktif untuk bantu lo mikir lebih jernih, ketawa sedikit, dan melihat pilihan karier dari sudut yang berbeda.</p>
-      </div>
-
-      <div class="tools">
-        <a class="tool featured" href="/Tes-Kesiapan-Resign/">
-          <img src="hero.png" alt="">
-          <div class="content">
-            <div class="mini">Experience 01 • Career Reality Check™</div>
-            <h3>Sebelum Ambil Keputusan Besar...</h3>
-            <p>Apakah lo lagi kepikiran buat resign, switch career, atau merasa ada yang nggak beres di kantor?</p>
-            <span class="cta-mini">Baca Kondisi Gue →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/office-match/">
-          <img src="office-match.png" alt="">
-          <div class="badge">FREE</div>
-          <div class="content">
-            <div class="mini">Experience 02 • Office Match™</div>
-            <h3>Apakah Lo Salah Kantor?</h3>
-            <p>Kadang masalahnya bukan performa lo. Kadang memang boss, budaya kerja, atau lingkungan yang nggak cocok.</p>
-            <span class="cta-mini">Cek Office Match →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/finansial-siap-resign/">
-          <img src="financial.png" alt="">
-          <div class="content">
-            <div class="mini">Experience 03 • Finansial Siap Resign™</div>
-            <h3>Kalau besok penghasilan berhenti, lo siap berapa lama?</h3>
-            <p>Hitung kesiapan finansial sebelum menghadapi resign, layoff, atau manage out.</p>
-            <span class="cta-mini">Hitung Sekarang →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/-quiz-tipe-karyawan/">
-          <img src="employee.png" alt="">
-          <div class="content">
-            <div class="mini">Experience 04 • Quiz Tipe Karyawan™</div>
-            <h3>Lo karyawan tipe apa di kantor?</h3>
-            <p>Kenali pola kerja, kekuatan, dan blind spot yang mungkin selama ini nggak lo sadari.</p>
-            <span class="cta-mini">Ikut Quiz →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/career-survival-cv/">
-          <img src="resign.png" alt="">
-          <div class="content">
-            <div class="mini">Experience 05 • Career Survival CV™</div>
-            <h3>Kalau kesempatan datang besok, CV lo siap?</h3>
-            <p>CV bukan sekadar terlihat bagus. CV harus mampu membuka percakapan.</p>
-            <span class="cta-mini">Bangun CV →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/sekarang-ngapain/">
-          <img src="direction.png" alt="">
-          <div class="content">
-            <div class="mini">Experience 06 • Sekarang Ngapain™</div>
-            <h3>Kalau belum resign, sekarang ngapain?</h3>
-            <p>Untuk momen ketika lo stuck, bingung, dan cuma butuh langkah berikutnya.</p>
-            <span class="cta-mini">Cari Arah →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/survive-your-boss/">
-          <img src="boss.png" alt="">
-          <div class="badge viral">VIRAL</div>
-          <div class="content">
-            <div class="mini">Experience 07 • Survive Your Boss™</div>
-            <h3>Game viral pelepas stres pekerja kantoran.</h3>
-            <p>Game yang dibuat untuk membuat lo ketawa, bukan semakin stres.</p>
-            <span class="cta-mini">Main Sekarang →</span>
-          </div>
-        </a>
-
-        <a class="tool" href="/seberapa-lelah-lu-hari-ini/">
-          <img src="hero.png" alt="">
-          <div class="badge">FREE</div>
-          <div class="content">
-            <div class="mini">Experience 08 • Office Fatigue Check™</div>
-            <h3>Cek seberapa lelah lu hari ini.</h3>
-            <p>Upload foto. Biar muka lu yang jawab dari sinyal mata dan bawah mata.</p>
-            <span class="cta-mini">Cek Sekarang →</span>
-          </div>
-        </a>
-
-        <a class="tool featured" href="/leadership-reality-check/">
-          <img src="leadership.png" alt="">
-          <div class="badge">NEW</div>
-          <div class="content">
-            <div class="mini">Experience 09 • Leadership Reality Check™</div>
-            <h3>Cara Lo Memimpin Mungkin Berbeda Dengan Cara Tim Lo Melihat Lo.</h3>
-            <p>Coba lihat pola yang mungkin mulai muncul dalam cara lo memimpin.</p>
-            <span class="cta-mini">Mulai Assessment →</span>
-          </div>
-        </a>
       </div>
     </section>
 
     <section class="section">
-      <div class="finding-box">
-        <div class="eyebrow">CAREER DECISION TRAP</div>
-        <h2>Kenapa Orang Sering Salah Ambil Keputusan Karier?</h2>
-        <div class="finding-grid">
-          <div class="finding"><b>Keputusan diambil saat lelah.</b><p>Banyak keputusan besar dibuat ketika emosi sedang tinggi dan energi sedang rendah.</p></div>
-          <div class="finding"><b>Terlalu banyak dengar opini orang lain.</b><p>Semua orang bisa kasih saran, tapi tidak semua benar-benar paham situasi lo.</p></div>
-          <div class="finding"><b>Gambaran situasinya belum lengkap.</b><p>Lo perlu melihat karier, finansial, lingkungan kerja, risiko, dan langkah berikutnya secara utuh.</p></div>
-          <div class="finding"><b>Tidak siap menghadapi skenario terburuk.</b><p>Resign, layoff, manage out, atau bertahan terlalu lama. Semua butuh persiapan.</p></div>
-        </div>
-        <p style="margin-top:22px;color:#ffd66d;font-weight:900;">
-          The 40 Reset dibuat untuk membantu lo melihat situasi dari beberapa sudut pandang sebelum mengambil keputusan besar.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="all-exp">
-        <div class="section-head left">
-          <div class="eyebrow">EXPLORE ALL</div>
-          <h2>9 Experience The 40 Reset</h2>
-        </div>
-        <div class="exp-grid">
-          <a class="exp" href="/Tes-Kesiapan-Resign/"><span>🧠</span>Career Reality Check</a>
-          <a class="exp" href="/office-match/"><span>🎭</span>Office Match</a>
-          <a class="exp" href="/finansial-siap-resign/"><span>📉</span>Finansial Siap Resign</a>
-          <a class="exp" href="/-quiz-tipe-karyawan/"><span>👥</span>Quiz Tipe Karyawan</a>
-          <a class="exp" href="/career-survival-cv/"><span>📄</span>Career Survival CV</a>
-          <a class="exp" href="/sekarang-ngapain/"><span>🧭</span>Sekarang Ngapain</a>
-          <a class="exp" href="/survive-your-boss/"><span>🎮</span>Survive Your Boss</a>
-          <a class="exp" href="/seberapa-lelah-lu-hari-ini/"><span>😵‍💫</span>Seberapa Lelah Lu Hari Ini</a>
-          <a class="exp" href="/leadership-reality-check/"><span>👔</span>Leadership Reality Check</a>
-        </div>
-      </div>
-
-      <div class="bottom-cta">
-        <div>
-          <div class="mini">Sebelum Mengambil Keputusan Karier Besar...</div>
-          <h2>Pastikan Lo Paham Apa Yang Sebenarnya Sedang Terjadi.</h2>
-        </div>
-        <a class="btn primary" href="#mulai">Mulai Di Sini →</a>
+      <div class="final-cta">
+        <h2>Mulai dari masalah yang paling terasa sekarang.</h2>
+        <p>Resign, salah kantor, finansial, capek, CV, boss, leadership, atau arah karier. Pilih satu titik masuk dan baca situasinya dulu.</p>
+        <a class="btn primary" href="#experience">Mulai Di Sini →</a>
       </div>
     </section>
   </main>
+
+  <div class="activity-pop" id="activityPop" aria-live="polite">
+    <div class="activity-label">Aktivitas Terbaru</div>
+    <div class="activity-text" id="activityText">Career Reality Check digunakan</div>
+    <div class="activity-time" id="activityTime">3 menit lalu</div>
+  </div>
 
   <footer class="footer">
     <div class="footer-inner">
       <div class="brand" style="font-size:13px">THE <span>40</span> RESET™</div>
       <div>© 2026 The 40 Reset. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#founder">Tentang</a>
-        <a href="#experience">Experience</a>
-        <a href="mailto:dhimasgarendi@gmail.com">Kontak</a>
-      </div>
+      <div><a href="mailto:dhimasgarendi@gmail.com">Kontak</a></div>
     </div>
   </footer>
+
+  <script>
+    const activities = [
+      ["Career Reality Check digunakan", "3 menit lalu"],
+      ["Office Match digunakan", "8 menit lalu"],
+      ["Finansial Siap Resign digunakan", "12 menit lalu"],
+      ["Tipe Karyawan digunakan", "17 menit lalu"],
+      ["Career Survival CV digunakan", "23 menit lalu"],
+      ["Sekarang Ngapain digunakan", "31 menit lalu"],
+      ["Survive Your Boss dimainkan", "38 menit lalu"],
+      ["Office Fatigue Check digunakan", "44 menit lalu"],
+      ["Leadership Reality Check digunakan", "52 menit lalu"]
+    ];
+    const pop = document.getElementById("activityPop");
+    const txt = document.getElementById("activityText");
+    const tim = document.getElementById("activityTime");
+    let idx = 0;
+    function showActivity(){
+      txt.textContent = activities[idx][0];
+      tim.textContent = activities[idx][1];
+      pop.classList.add("show");
+      setTimeout(()=>pop.classList.remove("show"), 5000);
+      idx = (idx + 1) % activities.length;
+    }
+    setTimeout(showActivity, 2500);
+    setInterval(showActivity, 20000);
+  </script>
 </body>
 </html>
-```
