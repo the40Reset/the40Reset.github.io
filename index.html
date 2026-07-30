@@ -167,7 +167,17 @@
     }
     @media(max-width:640px){
       .nav-inner{padding:12px 15px}.brand{font-size:15px}.links .pill{padding:9px 10px;font-size:12px}
-      .hero{min-height:650px}.hero:before{opacity:.70}.hero:after{background:linear-gradient(180deg,rgba(3,3,3,.70),rgba(3,3,3,.92)),linear-gradient(90deg,rgba(3,3,3,.94),rgba(3,3,3,.55))}.hero-inner{padding:52px 15px 42px;text-align:left}
+      .hero{min-height:650px}
+      .hero:before{
+        background:url('hero-bg-mobile.webp') right center/cover no-repeat;
+        opacity:.90;
+      }
+      .hero:after{
+        background:
+          linear-gradient(180deg,rgba(3,3,3,.55),rgba(3,3,3,.88)),
+          linear-gradient(90deg,rgba(3,3,3,.88),rgba(3,3,3,.35));
+      }
+      .hero-inner{padding:52px 15px 42px;text-align:left}
       .eyebrow:before,.eyebrow:after{display:none}
       h1{font-size:42px;margin:0;max-width:100%}
       .sub{font-size:15.5px;margin-left:0;margin-right:0}
