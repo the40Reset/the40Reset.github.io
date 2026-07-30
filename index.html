@@ -74,7 +74,7 @@
 
     .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .exp-card{
-      position:relative;height:252px;border:1px solid var(--line);border-radius:21px;overflow:hidden;
+      position:relative;height:276px;border:1px solid var(--line);border-radius:21px;overflow:hidden;
       background:
         radial-gradient(circle at 88% 12%,rgba(244,185,67,.18),transparent 34%),
         linear-gradient(145deg,rgba(255,255,255,.070),rgba(255,255,255,.017));
@@ -96,6 +96,8 @@
     .icon-wrap svg .fill{fill:var(--gold2);stroke:none}
     .card-copy h3{font-size:24px;line-height:1.02;letter-spacing:-.055em;margin:0 0 9px;font-weight:950}
     .card-copy p{color:#dfd3c2;line-height:1.42;font-size:14px;margin:0}
+    .card-price{display:inline-flex;align-items:center;margin-top:10px;padding:6px 10px;border:1px solid rgba(244,185,67,.58);border-radius:9px;color:var(--gold2);font-size:12px;font-weight:950;letter-spacing:.02em;background:rgba(244,185,67,.08)}
+    .card-price.free{border-color:rgba(102,199,255,.70);color:#b9e9ff;background:rgba(102,199,255,.09)}
     .mini-btn{position:relative;z-index:1;align-self:flex-end;min-width:152px;text-align:center;border:1px solid rgba(244,185,67,.58);color:var(--gold2);border-radius:12px;padding:10px 14px;font-size:13px;font-weight:950;background:rgba(0,0,0,.22)}
     .mini-btn b{margin-left:8px}
     .exp-card:nth-child(2) .mini-btn,.exp-card:nth-child(8) .mini-btn{border-color:rgba(102,199,255,.70);color:#b9e9ff}
@@ -146,6 +148,13 @@
     .activity-text{font-size:14px;color:#fff1de;font-weight:850;line-height:1.35}
     .activity-time{font-size:12px;color:var(--muted);margin-top:5px}
 
+    .social-section{max-width:var(--max);margin:0 auto 34px;padding:0 20px;text-align:center}
+    .social-section h2{margin:0 0 8px;font-size:24px;letter-spacing:-.035em}
+    .social-section p{margin:0 0 18px;color:var(--muted);font-size:14px}
+    .social-links{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .social-link{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border:1px solid rgba(244,185,67,.38);border-radius:14px;background:rgba(255,255,255,.025);font-size:13px;font-weight:900;transition:.2s ease}
+    .social-link:hover{transform:translateY(-3px);border-color:rgba(244,185,67,.75);background:rgba(244,185,67,.07)}
+    .social-icon{font-size:18px}
     .footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 20px;color:#8f8578;font-size:12px}
     .footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -180,6 +189,7 @@
       .phone{width:168px;border-radius:22px}.phone img{height:315px;border-radius:16px}
       .panel{padding:24px}.panel h2{font-size:31px}
       .final-cta{padding:30px 20px}
+      .social-links{grid-template-columns:1fr 1fr}
     }
   </style>
 </head>
@@ -236,6 +246,7 @@
             <div class="card-copy">
               <h3>Career Reality Check™</h3>
               <p>Buat lo yang mau resign, sedang di-manage out, atau mulai takut kena layoff.</p>
+              <span class="card-price">Rp35.000</span>
             </div>
           </div>
           <span class="mini-btn">Cek Kondisi Lo <b>→</b></span>
@@ -247,6 +258,7 @@
             <div class="card-copy">
               <h3>Office Match™</h3>
               <p>Lihat kecocokan lo dengan atasan, lingkungan kerja, dan budaya perusahaan.</p>
+              <span class="card-price free">GRATIS</span>
             </div>
           </div>
           <span class="mini-btn">Cek Office Match <b>→</b></span>
@@ -258,6 +270,7 @@
             <div class="card-copy">
               <h3>Finansial Siap Resign™</h3>
               <p>Kalau penghasilan berhenti besok, uang lo bisa bertahan berapa lama?</p>
+              <span class="card-price">Rp20.000</span>
             </div>
           </div>
           <span class="mini-btn">Hitung Sekarang <b>→</b></span>
@@ -269,6 +282,7 @@
             <div class="card-copy">
               <h3>Tipe Karyawan™</h3>
               <p>Cari tahu tipe karyawan lo, cara kerja terbaik, dan blind spot yang mungkin belum lo sadari.</p>
+              <span class="card-price">Rp25.000</span>
             </div>
           </div>
           <span class="mini-btn">Temukan Tipe Lo <b>→</b></span>
@@ -280,6 +294,7 @@
             <div class="card-copy">
               <h3>Career Survival CV™</h3>
               <p>CV Builder berdasarkan 16+ tahun pengalaman korporasi. Template proven, ATS friendly, export PDF.</p>
+              <span class="card-price">Rp35.000</span>
             </div>
           </div>
           <span class="mini-btn">Bangun CV <b>→</b></span>
@@ -291,6 +306,7 @@
             <div class="card-copy">
               <h3>Sekarang Ngapain™</h3>
               <p>Belum resign. Belum pindah. Tapi stuck. Cari langkah paling masuk akal berikutnya.</p>
+              <span class="card-price">Rp12.500</span>
             </div>
           </div>
           <span class="mini-btn">Cari Arah Lo <b>→</b></span>
@@ -302,6 +318,7 @@
             <div class="card-copy">
               <h3>Survive Your Boss™</h3>
               <p>Game viral pelepas stres pekerja kantoran. Seru, lucu, dan bikin nagih.</p>
+              <span class="card-price">Rp15.000</span>
             </div>
           </div>
           <span class="mini-btn">Main Sekarang <b>→</b></span>
@@ -313,6 +330,7 @@
             <div class="card-copy">
               <h3>Office Fatigue Check™</h3>
               <p>Cek seberapa lelah lo hari ini. Mungkin lo butuh break, reset, atau change.</p>
+              <span class="card-price free">GRATIS</span>
             </div>
           </div>
           <span class="mini-btn">Cek Sekarang <b>→</b></span>
@@ -324,6 +342,7 @@
             <div class="card-copy">
               <h3>Leadership Reality Check™</h3>
               <p>Cara lo memimpin mungkin berbeda dengan cara tim lo melihat lo.</p>
+              <span class="card-price">Rp25.000</span>
             </div>
           </div>
           <span class="mini-btn">Mulai Assessment <b>→</b></span>
@@ -402,6 +421,18 @@
     <div class="activity-text" id="activityText">Career Reality Check digunakan</div>
     <div class="activity-time" id="activityTime">3 menit lalu</div>
   </div>
+
+
+  <section class="social-section" aria-labelledby="social-title">
+    <h2 id="social-title">Ikuti The 40 Reset</h2>
+    <p>Konten, pola, dan interactive experience terbaru.</p>
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/dhimas.garendi?igsh=MWh4ZW41Ymg1eG1rbQ==" target="_blank" rel="noopener noreferrer"><span class="social-icon">◎</span> Instagram</a>
+      <a class="social-link" href="https://www.tiktok.com/@dhimas_g" target="_blank" rel="noopener noreferrer"><span class="social-icon">♪</span> TikTok</a>
+      <a class="social-link" href="https://youtube.com/@the40resetofficial?si=GHtGNUlcyviYVHHP" target="_blank" rel="noopener noreferrer"><span class="social-icon">▶</span> YouTube</a>
+      <a class="social-link" href="https://www.linkedin.com/in/dhimas-garendi-017074a8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><span class="social-icon">in</span> LinkedIn</a>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-inner">
