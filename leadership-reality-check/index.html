@@ -184,6 +184,97 @@ body.app-mode .screen{padding-top:1.2rem;}
 .side-truth{margin-top:.55rem;font-size:.82rem;line-height:1.45;color:#fff;font-weight:900;border-top:1px solid rgba(247,184,45,.18);padding-top:.55rem;}
 .audit-note{margin:.9rem 0 1rem;padding:.85rem 1rem;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.11);font-size:.86rem;line-height:1.62;color:#DCE2EC;font-weight:750}
 
+
+
+/* === SALES-FIRST LANDING ONLY — quiz/result untouched === */
+body:not(.app-mode){background:#FFFFFF;color:#141412;}
+body:not(.app-mode) .topbar{background:#FFFFFF;border-bottom:1px solid #E8D9B8;backdrop-filter:none;}
+body:not(.app-mode) .topbar-brand{color:#111;font-weight:950;letter-spacing:.14em;}
+body:not(.app-mode) #landing.hero{background:#FFFFFF!important;background-image:none!important;align-items:flex-start!important;padding:0 1rem 4rem!important;min-height:100vh;}
+body:not(.app-mode) #landing.hero::before{display:none!important;}
+body:not(.app-mode) #landing .hero-inner{width:100%;max-width:760px;margin:0 auto;padding:2.25rem 0 0;text-align:center;}
+body:not(.app-mode) #landing .landing-eyebrow{font-size:.78rem;font-weight:950;letter-spacing:.16em;color:#B88716;margin-bottom:1rem;}
+body:not(.app-mode) #landing h1{font-size:clamp(2.4rem,8vw,4.25rem);line-height:.94;letter-spacing:-.065em;color:#141412;text-transform:uppercase;margin:0 auto;max-width:730px;font-weight:950;}
+body:not(.app-mode) #landing h1 span{color:#B88716;}
+body:not(.app-mode) #landing .hero-line{height:2px;width:100%;max-width:560px;background:linear-gradient(90deg,transparent,#B88716,transparent);margin:1.45rem auto 1.15rem;}
+body:not(.app-mode) #landing .hero-copy{max-width:650px;margin:0 auto;color:#242321;font-size:1rem;line-height:1.72;font-weight:600;}
+body:not(.app-mode) #landing .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:2rem auto 1.5rem;max-width:720px;border-top:1px solid rgba(184,135,22,.24);border-bottom:1px solid rgba(184,135,22,.24);}
+body:not(.app-mode) #landing .benefit-item{padding:1.15rem .65rem;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:132px;border-right:1px solid rgba(184,135,22,.22);}
+body:not(.app-mode) #landing .benefit-item:last-child{border-right:0;}
+body:not(.app-mode) #landing .benefit-icon{font-size:1.85rem;color:#B88716;line-height:1;margin-bottom:.6rem;font-weight:900;}
+body:not(.app-mode) #landing .benefit-item b{font-size:.75rem;line-height:1.2;color:#111;font-weight:950;}
+body:not(.app-mode) #landing .benefit-item span{font-size:.65rem;line-height:1.3;color:#292825;font-weight:800;margin-top:.2rem;}
+body:not(.app-mode) #landing .buy-panel{max-width:650px;margin:1.4rem auto 1.8rem;background:#141412;border-radius:18px;padding:1.15rem 1rem 1rem;box-shadow:0 20px 50px rgba(0,0,0,.13);}
+body:not(.app-mode) #landing .buy-kicker{color:#C79A29;font-size:.72rem;letter-spacing:.12em;font-weight:950;margin-bottom:.65rem;}
+body:not(.app-mode) #landing .buy-main{display:block;text-decoration:none;background:linear-gradient(135deg,#D0A52F,#B88716);color:#fff;border-radius:10px;padding:1rem .8rem;font-size:1rem;font-weight:950;letter-spacing:.01em;}
+body:not(.app-mode) #landing .buy-note{color:#E8E8E8;font-size:.74rem;margin-top:.65rem;font-weight:650;}
+body:not(.app-mode) #landing .fit-panel{max-width:650px;margin:0 auto 1.65rem;text-align:left;}
+body:not(.app-mode) #landing .fit-panel h2{font-size:1.2rem;color:#111;margin-bottom:.8rem;letter-spacing:-.03em;}
+body:not(.app-mode) #landing .fit-item{color:#292825;font-size:.9rem;line-height:1.55;margin:.48rem 0;font-weight:650;}
+body:not(.app-mode) #landing .fit-item::first-letter{color:#B88716;}
+body:not(.app-mode) #landing .buyer-access{max-width:650px;margin:0 auto;border:1px solid rgba(184,135,22,.35);border-radius:16px;padding:1.1rem;background:#FFFFFF;}
+body:not(.app-mode) #landing .buyer-title{font-size:.82rem;font-weight:950;color:#111;}
+body:not(.app-mode) #landing .buyer-copy{font-size:.86rem;color:#292825;margin:.2rem 0 .8rem;}
+body:not(.app-mode) #landing .buyer-form{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center;}
+body:not(.app-mode) #landing .form-input{background:#FFFFFF;border:1px solid rgba(20,20,18,.16);color:#111;border-radius:10px;padding:.9rem 1rem;min-width:0;}
+body:not(.app-mode) #landing .form-input::placeholder{color:#777;}
+body:not(.app-mode) #landing .btn-primary{width:auto;margin:0;background:#141412;color:#fff;border-radius:10px;padding:.9rem 1.05rem;box-shadow:none;white-space:nowrap;}
+@media(max-width:620px){
+  body:not(.app-mode) #landing .benefit-grid{grid-template-columns:repeat(2,1fr);}
+  body:not(.app-mode) #landing .benefit-item:nth-child(2){border-right:0;}
+  body:not(.app-mode) #landing .benefit-item:nth-child(-n+2){border-bottom:1px solid rgba(184,135,22,.22);}
+  body:not(.app-mode) #landing .buyer-form{grid-template-columns:1fr;}
+  body:not(.app-mode) #landing .btn-primary{width:100%;}
+}
+
+
+/* === REMOVE ALL GRAY ON LANDING === */
+body:not(.app-mode),
+body:not(.app-mode) #landing,
+body:not(.app-mode) #landing.hero,
+body:not(.app-mode) #landing .hero-inner,
+body:not(.app-mode) .topbar,
+body:not(.app-mode) #landing .benefit-grid,
+body:not(.app-mode) #landing .benefit-item,
+body:not(.app-mode) #landing .fit-panel,
+body:not(.app-mode) #landing .buyer-access,
+body:not(.app-mode) #landing .buyer-form,
+body:not(.app-mode) #landing .form-input {
+  background:#FFFFFF !important;
+  background-image:none !important;
+}
+body:not(.app-mode) #landing,
+body:not(.app-mode) #landing .hero-inner,
+body:not(.app-mode) #landing .buyer-access { box-shadow:none !important; }
+body:not(.app-mode) #landing::before,
+body:not(.app-mode) #landing::after,
+body:not(.app-mode) #landing .hero-inner::before,
+body:not(.app-mode) #landing .hero-inner::after { display:none !important; background:none !important; }
+
+</style>
+
+<style id="landing-no-shadow-final">
+/* Landing page only: remove ALL shadows/blur effects. App/quiz/result logic untouched. */
+body:not(.app-mode) #landing,
+body:not(.app-mode) #landing *,
+body:not(.app-mode) .topbar,
+body:not(.app-mode) .topbar * {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+body:not(.app-mode) #landing::before,
+body:not(.app-mode) #landing::after,
+body:not(.app-mode) #landing *::before,
+body:not(.app-mode) #landing *::after {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
 </style>
 </head>
 <body>
@@ -196,17 +287,40 @@ body.app-mode .screen{padding-top:1.2rem;}
 </div>
 
 <section class="hero screen active" id="landing">
-  <div class="hero-inner">
-    <div class="kicker">Leadership Reality Check™</div>
-    <h1>Cara Lo Memimpin Mungkin Berbeda Dengan Cara Tim Lo Melihat Lo.</h1>
+  <div class="hero-inner sales-landing">
+    <div class="landing-eyebrow">LEADERSHIP REALITY CHECK™</div>
+    <h1>LO YAKIN TIM LO<br><span>LIHAT LO</span><br>SEPERTI YANG LO KIRA?</h1>
     <div class="hero-line"></div>
-    <p class="hero-copy">Coba lihat pola yang mungkin mulai muncul dalam cara lo memimpin.</p>
-    <div class="lock-panel">
-      <label class="form-label" for="passwordInput">Masukkan password</label>
-      <input class="form-input" id="passwordInput" type="password" placeholder="Password akses" autocomplete="off">
-      <button class="btn-primary" onclick="unlockQuiz()">Mulai →</button>
-      <div class="donation">Belum punya akses? Ambil password di Lynk.id. Password saat ini: <b>numberone</b></div>
-      <a class="btn-secondary" href="http://lynk.id/the_40_reset/j0872ver3eoe/checkout" target="_blank" rel="noopener">Beli akses di Lynk.id →</a>
+    <p class="hero-copy">Leadership Reality Check™ bantu lo membaca pola kepemimpinan yang mungkin terlihat berbeda dari sisi tim — lewat situasi kerja yang dekat dengan keseharian leader.</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-item"><div class="benefit-icon">◎</div><b>18 SITUASI</b><span>KEPEMIMPINAN</span></div>
+      <div class="benefit-item"><div class="benefit-icon">◷</div><b>INTERAKTIF</b><span>JAWAB SESUAI POLA LO</span></div>
+      <div class="benefit-item"><div class="benefit-icon">▥</div><b>HASIL PERSONAL</b><span>TIPE + POLA DOMINAN</span></div>
+      <div class="benefit-item"><div class="benefit-icon">◇</div><b>BUKAN MOTIVASI</b><span>INI CERMIN CARA LO MEMIMPIN</span></div>
+    </div>
+
+    <div class="buy-panel">
+      <div class="buy-kicker">SIAP LIHAT POLANYA?</div>
+      <a class="buy-main" href="http://lynk.id/the_40_reset/j0872ver3eoe/checkout" target="_blank" rel="noopener">MULAI LEADERSHIP REALITY CHECK</a>
+      <div class="buy-note">🔒 Langsung ke halaman pembelian</div>
+    </div>
+
+    <div class="fit-panel">
+      <h2>Cocok buat lo yang:</h2>
+      <div class="fit-item">✓ Lagi memimpin tim dan penasaran bagaimana pola lo terlihat dari bawah</div>
+      <div class="fit-item">✓ Sering merasa niat lo baik, tapi respons tim nggak selalu sesuai harapan</div>
+      <div class="fit-item">✓ Mau membaca blind spot sebelum masalahnya makin besar</div>
+      <div class="fit-item">✓ Mau lihat pola kepemimpinan lo tanpa tes yang terasa seperti buku teks</div>
+    </div>
+
+    <div class="buyer-access">
+      <div class="buyer-title">SUDAH MEMBELI?</div>
+      <div class="buyer-copy">Masukkan password akses untuk mulai.</div>
+      <div class="buyer-form">
+        <input class="form-input" id="passwordInput" type="password" placeholder="Password akses" autocomplete="off">
+        <button class="btn-primary" onclick="unlockQuiz()">MASUK →</button>
+      </div>
     </div>
   </div>
 </section>
