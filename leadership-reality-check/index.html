@@ -672,50 +672,50 @@ const LRC_FREE_QUESTIONS = [
     q:"Saat tim bikin kesalahan yang cukup kelihatan, respons pertama lo paling sering apa?",
     hint:"Pilih yang paling sering kejadian, bukan yang terdengar paling ideal.",
     opts:[
-      ["Langsung gue koreksi detailnya supaya nggak kejadian lagi.",3],
-      ["Gue tanya dulu apa yang bikin itu terjadi.",1],
-      ["Gue ambil alih dulu biar cepat beres.",3],
-      ["Gue kasih ruang dia beresin, lalu kita review.",0]
+      ["Langsung gue koreksi detailnya supaya nggak kejadian lagi.",{control:3, takeover:1}],
+      ["Gue tanya dulu apa yang bikin itu terjadi.",{listening:3, trust:1}],
+      ["Gue ambil alih dulu biar cepat beres.",{takeover:3, control:2}],
+      ["Gue kasih ruang dia beresin, lalu kita review.",{delegation:3, trust:2}]
     ]
   },
   {
     q:"Kalau hasil kerja tim belum sesuai ekspektasi, biasanya lo...",
     hint:"Bayangin kondisi saat deadline lagi dekat.",
     opts:[
-      ["Kasih contoh persis cara gue maunya.",3],
-      ["Jelasin outcome yang gue butuhkan, lalu kasih mereka cara sendiri.",0],
-      ["Cek progress lebih sering supaya nggak melenceng.",2],
-      ["Tunggu sampai mereka minta bantuan.",1]
+      ["Kasih contoh persis cara gue maunya.",{control:3, direction:2}],
+      ["Jelasin outcome yang gue butuhkan, lalu kasih mereka cara sendiri.",{delegation:3, trust:2}],
+      ["Cek progress lebih sering supaya nggak melenceng.",{control:2, monitoring:3}],
+      ["Tunggu sampai mereka minta bantuan.",{delegation:2, distance:2}]
     ]
   },
   {
     q:"Seberapa sering tim harus minta approval lo sebelum bergerak?",
     hint:"Bukan SOP formalnya. Yang benar-benar terjadi sehari-hari.",
     opts:[
-      ["Hampir semua hal penting harus lewat gue.",3],
-      ["Cukup sering, biar gue tahu semuanya.",2],
-      ["Untuk keputusan tertentu saja.",1],
-      ["Mereka punya batas keputusan yang jelas tanpa gue.",0]
+      ["Hampir semua hal penting harus lewat gue.",{approval:3, control:2}],
+      ["Cukup sering, biar gue tahu semuanya.",{approval:2, monitoring:2}],
+      ["Untuk keputusan tertentu saja.",{approval:1, delegation:2}],
+      ["Mereka punya batas keputusan yang jelas tanpa gue.",{delegation:3, trust:3}]
     ]
   },
   {
     q:"Kalau ada anggota tim yang beda pendapat sama lo di meeting...",
     hint:"Pilih respons yang paling natural buat lo.",
     opts:[
-      ["Gue debat sampai jelas mana yang paling masuk akal.",2],
-      ["Gue dengar dulu, lalu minta dia jelasin datanya.",0],
-      ["Gue tetap putuskan cepat supaya meeting nggak melebar.",2],
-      ["Biasanya gue nggak masalah, tapi tetap gue arahkan ke keputusan gue.",3]
+      ["Gue debat sampai jelas mana yang paling masuk akal.",{assertive:3, listening:1}],
+      ["Gue dengar dulu, lalu minta dia jelasin datanya.",{listening:3, openness:3}],
+      ["Gue tetap putuskan cepat supaya meeting nggak melebar.",{control:2, assertive:2}],
+      ["Biasanya gue nggak masalah, tapi tetap gue arahkan ke keputusan gue.",{control:3, openness:1}]
     ]
   },
   {
     q:"Setelah kasih tugas besar, pola lo biasanya...",
     hint:"Yang dinilai bukan bagus atau buruk. Ini cuma membaca kecenderungan.",
     opts:[
-      ["Sering check-in supaya kualitasnya tetap terjaga.",2],
-      ["Set checkpoint jelas lalu gue kasih ruang.",0],
-      ["Gue masuk lagi kalau mulai kelihatan salah arah.",1],
-      ["Kadang akhirnya gue kerjain sebagian sendiri.",3]
+      ["Sering check-in supaya kualitasnya tetap terjaga.",{monitoring:3, control:2}],
+      ["Set checkpoint jelas lalu gue kasih ruang.",{delegation:3, trust:3}],
+      ["Gue masuk lagi kalau mulai kelihatan salah arah.",{monitoring:2, control:1}],
+      ["Kadang akhirnya gue kerjain sebagian sendiri.",{takeover:3, delegation:0}]
     ]
   }
 ];
@@ -772,19 +772,57 @@ function nextFreePreview(){
   }
 }
 
+function sumDimensions(){
+  const dims = {
+    control:0, takeover:0, listening:0, trust:0, delegation:0,
+    direction:0, monitoring:0, distance:0, approval:0,
+    assertive:0, openness:0
+  };
+  lrcFreeAnswers.forEach(ans=>{
+    if(!ans) return;
+    Object.entries(ans).forEach(([k,v])=>{
+      dims[k] = (dims[k]||0) + Number(v||0);
+    });
+  });
+  return dims;
+}
+
 function showFreePreviewResult(){
-  const total = lrcFreeAnswers.reduce((a,b)=>a+b,0);
+  const d = sumDimensions();
+
+  const controlCluster = d.control + d.approval + d.monitoring + d.takeover;
+  const empowerCluster = d.delegation + d.trust + d.openness + d.listening;
+  const takeover = d.takeover;
+  const approval = d.approval;
+  const listening = d.listening + d.openness;
+  const delegation = d.delegation + d.trust;
+  const monitoring = d.monitoring + d.control;
+
   let title, copy;
-  if(total >= 11){
+
+  if(takeover >= 5){
+    title = "LO CEPAT MASUK DAN AMBIL ALIH";
+    copy = "Dari 5 situasi awal, saat tekanan naik lo cenderung ikut masuk lebih dalam sampai mengambil sebagian kendali. Buat lo mungkin ini soal tanggung jawab. Dari sisi tim, pola yang sama bisa terasa seperti ruang mereka cepat mengecil.";
+  } else if(approval >= 4 && controlCluster > empowerCluster){
+    title = "BANYAK HAL MASIH BERPUTAR DI LO";
+    copy = "Signal awal menunjukkan keputusan dan gerak tim cukup sering menunggu approval atau konfirmasi lo. Ini bisa bikin kontrol terasa rapi, tapi juga bisa membuat tim belajar menunggu sebelum bergerak.";
+  } else if(monitoring >= 8 && controlCluster >= empowerCluster + 3){
     title = "KONTROL LO CUKUP KUAT";
-    copy = "Dari 5 situasi awal, lo cenderung cepat masuk ke detail, approval, atau cara kerja tim. Belum tentu salah — tapi dari bawah, pola ini bisa terasa lebih mengontrol daripada yang lo maksud.";
-  } else if(total >= 6){
-    title = "LO ADA DI AREA CAMPURAN";
-    copy = "Ada momen lo kasih ruang, tapi di situasi tertentu kontrol lo naik cukup cepat. Pola lengkapnya baru kelihatan kalau dibaca lintas lebih banyak situasi.";
+    copy = "Lo terlihat punya kebutuhan tinggi untuk memastikan detail, arah, dan progress tetap sesuai standar. Niatnya bisa menjaga kualitas. Tapi dari bawah, intensitas kontrol kadang terbaca berbeda.";
+  } else if(listening >= 5 && delegation >= 7){
+    title = "LO CENDERUNG MEMBERI RUANG";
+    copy = "Dari 5 situasi awal, lo cukup sering mendengar, menetapkan batas, lalu memberi tim ruang bergerak. Signalnya positif, tapi full assessment tetap perlu melihat apakah ruang itu konsisten saat tekanan, konflik, dan performa turun.";
+  } else if(delegation >= 8 && monitoring <= 4){
+    title = "LO BANYAK MEMBERI OTONOMI";
+    copy = "Lo cenderung memberi kepercayaan dan tidak terlalu cepat masuk ke detail. Kekuatan pola ini adalah ownership. Blind spot-nya: pastikan otonomi tidak berubah menjadi tim merasa kurang arah atau kurang hadirnya leader.";
+  } else if(listening <= 2 && d.assertive >= 4){
+    title = "LO CEPAT MENGARAHKAN KEPUTUSAN";
+    copy = "Saat ada perbedaan atau tekanan, lo cenderung cepat membawa diskusi menuju keputusan. Ini bisa terasa tegas dan efisien, tapi dari sisi tim bisa mengurangi ruang untuk challenge dan perspektif yang berbeda.";
   } else {
-    title = "RUANG KE TIM CUKUP BESAR";
-    copy = "Dari 5 situasi awal, lo relatif memberi ruang, mendengar, dan membatasi intervensi. Tapi ini baru satu sisi leadership — blind spot lain belum ikut terbaca.";
+    title = "POLA LO CAMPURAN";
+    copy = "Lo nggak terlalu dominan di satu arah. Ada situasi saat lo memberi ruang, ada juga saat kontrol naik. Justru pola campuran seperti ini perlu dibaca lewat lebih banyak konteks karena blind spot biasanya muncul saat tekanan berubah.";
   }
+
   document.getElementById('freeSignalTitle').textContent = title;
   document.getElementById('freeSignalCopy').textContent = copy;
   showScreen('freePreviewResult');
