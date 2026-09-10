@@ -276,6 +276,131 @@ body:not(.app-mode) #landing *::after {
   -webkit-backdrop-filter: none !important;
 }
 </style>
+
+<style id="lrc-free-preview-style">
+body.free-preview-mode .topbar{background:rgba(5,8,13,.94)}
+.lrc-free-start{border:0;cursor:pointer;font-family:var(--font)}
+.lrc-preview-screen{max-width:560px}
+.lrc-preview-head{padding:.8rem 0 1.4rem}
+.lrc-preview-kicker{font-size:.72rem;letter-spacing:.14em;color:var(--gold);font-weight:900;margin-bottom:.45rem}
+.lrc-preview-count{font-size:.78rem;color:var(--muted);font-weight:800;margin-bottom:.5rem}
+.lrc-preview-progress{height:5px;background:rgba(255,255,255,.10);border-radius:99px;overflow:hidden}
+.lrc-preview-progress span{display:block;width:20%;height:100%;background:linear-gradient(90deg,var(--gold),#FFE08A);border-radius:99px;transition:width .25s ease}
+.lrc-free-q{padding:1.1rem 0 7rem}
+.lrc-free-q h2{font-size:clamp(1.55rem,7vw,2.15rem);line-height:1.16;letter-spacing:-.035em;margin-bottom:.55rem}
+.lrc-free-q p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:1.25rem}
+.lrc-free-options{display:grid;gap:.72rem}
+.lrc-free-option{width:100%;text-align:left;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg,#151c24,#0e141b);color:var(--text);border-radius:16px;padding:1rem;display:grid;grid-template-columns:34px 1fr;gap:.75rem;align-items:center;cursor:pointer;font-family:var(--font);font-weight:750;line-height:1.45}
+.lrc-free-option .n{width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;font-size:.78rem;font-weight:900}
+.lrc-free-option.active{border-color:var(--gold);background:linear-gradient(135deg,rgba(247,184,45,.22),rgba(247,184,45,.08))}
+.lrc-free-option.active .n{background:var(--gold);color:#080a0d;border-color:var(--gold)}
+.lrc-result-wrap{padding:.8rem 0 2rem}
+.lrc-preview-result-title{font-size:clamp(2.05rem,9vw,3.15rem);line-height:.98;letter-spacing:-.055em;margin:.35rem 0 1rem}
+.lrc-preview-result-title span{color:var(--gold)}
+.lrc-preview-result-lead{color:var(--muted);font-size:.92rem;line-height:1.65;margin-bottom:1rem}
+.lrc-signal-card{border:1px solid rgba(247,184,45,.28);background:rgba(247,184,45,.06);border-radius:18px;padding:1.05rem;margin:1rem 0}
+.lrc-signal-card small,.lrc-lock-card small{display:block;color:var(--gold);font-size:.68rem;font-weight:900;letter-spacing:.13em;margin-bottom:.4rem}
+.lrc-signal-card strong{display:block;font-size:1.25rem;line-height:1.2;margin-bottom:.4rem}
+.lrc-signal-card p{font-size:.86rem;color:#d4d8dc;line-height:1.6}
+.lrc-tease-grid{display:grid;grid-template-columns:1fr;gap:.55rem;margin:1rem 0}
+.lrc-tease-grid>div{display:grid;grid-template-columns:34px 1fr;gap:.65rem;align-items:center;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:13px;padding:.8rem}
+.lrc-tease-grid span{color:var(--gold);font-size:.72rem;font-weight:900}
+.lrc-tease-grid b{font-size:.84rem}
+.lrc-lock-card{display:grid;grid-template-columns:44px 1fr;gap:.8rem;border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:1rem;margin:1.15rem 0;background:linear-gradient(180deg,#121922,#0b1118)}
+.lrc-lock-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(247,184,45,.3);color:var(--gold);font-size:1.25rem}
+.lrc-lock-card h3{font-size:1rem;line-height:1.4;margin-bottom:.4rem}
+.lrc-lock-card p{font-size:.79rem;color:var(--muted);line-height:1.55}
+.lrc-unlock-btn{display:flex;align-items:center;justify-content:center;text-decoration:none}
+.lrc-result-access{margin-top:1.2rem}
+.lrc-text-btn{display:block;margin:1rem auto 0;border:0;background:none;color:#c6aa62;font-family:var(--font);font-size:.78rem;font-weight:850;cursor:pointer}
+@media(max-width:560px){
+  .lrc-preview-screen{padding-left:1rem;padding-right:1rem}
+  .lrc-free-option{min-height:64px}
+}
+</style>
+
+
+<style id="lrc-paywall-mobile-fix">
+/* ===== PAYWALL CTA FIX: prevent browser/default visited-link styling ===== */
+#freePreviewResult .lrc-unlock-btn,
+#freePreviewResult .lrc-unlock-btn:link,
+#freePreviewResult .lrc-unlock-btn:visited,
+#freePreviewResult .lrc-unlock-btn:hover,
+#freePreviewResult .lrc-unlock-btn:active,
+#freePreviewResult a.buy-main.lrc-unlock-btn {
+  width:100% !important;
+  min-height:62px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:16px 18px !important;
+  margin:14px 0 8px !important;
+  border:0 !important;
+  border-radius:16px !important;
+  background:linear-gradient(135deg,#FFE07A 0%,#F7B82D 48%,#C8870E 100%) !important;
+  color:#080A0D !important;
+  text-decoration:none !important;
+  text-align:center !important;
+  font-family:var(--font) !important;
+  font-size:1rem !important;
+  line-height:1.2 !important;
+  font-weight:950 !important;
+  letter-spacing:.01em !important;
+  box-shadow:0 14px 34px rgba(247,184,45,.18) !important;
+  -webkit-text-fill-color:#080A0D !important;
+  appearance:none !important;
+  -webkit-appearance:none !important;
+}
+#freePreviewResult .buy-note{
+  color:var(--muted) !important;
+  font-size:.78rem !important;
+  line-height:1.5 !important;
+  text-align:center !important;
+  margin:0 0 1.15rem !important;
+}
+#freePreviewResult .lrc-result-access{
+  margin-top:1rem !important;
+  padding:1rem !important;
+  border:1px solid rgba(247,184,45,.22) !important;
+  border-radius:18px !important;
+  background:rgba(255,255,255,.035) !important;
+}
+#freePreviewResult .lrc-result-access .buyer-title{
+  color:#fff !important;
+  font-size:.82rem !important;
+  font-weight:950 !important;
+  text-align:center !important;
+  margin-bottom:.25rem !important;
+}
+#freePreviewResult .lrc-result-access .buyer-copy{
+  color:var(--muted) !important;
+  font-size:.82rem !important;
+  line-height:1.55 !important;
+  text-align:center !important;
+  margin-bottom:.85rem !important;
+}
+#freePreviewResult .lrc-result-access .buyer-form{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:.65rem !important;
+}
+#freePreviewResult .lrc-result-access .form-input{
+  width:100% !important;
+  min-height:58px !important;
+}
+#freePreviewResult .lrc-result-access .btn-primary{
+  width:100% !important;
+  min-height:58px !important;
+  margin:0 !important;
+}
+@media(max-width:560px){
+  #freePreviewResult .lrc-unlock-btn{
+    min-height:64px !important;
+    font-size:1.02rem !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="topbar" id="topbar">
@@ -294,16 +419,16 @@ body:not(.app-mode) #landing *::after {
     <p class="hero-copy">Leadership Reality Check™ bantu lo membaca pola kepemimpinan yang mungkin terlihat berbeda dari sisi tim — lewat situasi kerja yang dekat dengan keseharian leader.</p>
 
     <div class="benefit-grid">
-      <div class="benefit-item"><div class="benefit-icon">◎</div><b>18 SITUASI</b><span>KEPEMIMPINAN</span></div>
+      <div class="benefit-item"><div class="benefit-icon">◎</div><b>5 GRATIS</b><span>DARI 18 SITUASI</span></div>
       <div class="benefit-item"><div class="benefit-icon">◷</div><b>INTERAKTIF</b><span>JAWAB SESUAI POLA LO</span></div>
       <div class="benefit-item"><div class="benefit-icon">▥</div><b>HASIL PERSONAL</b><span>TIPE + POLA DOMINAN</span></div>
       <div class="benefit-item"><div class="benefit-icon">◇</div><b>BUKAN MOTIVASI</b><span>INI CERMIN CARA LO MEMIMPIN</span></div>
     </div>
 
     <div class="buy-panel">
-      <div class="buy-kicker">SIAP LIHAT POLANYA?</div>
-      <a class="buy-main" href="http://lynk.id/the_40_reset/j0872ver3eoe/checkout" target="_blank" rel="noopener">MULAI LEADERSHIP REALITY CHECK</a>
-      <div class="buy-note">🔒 Langsung ke halaman pembelian</div>
+      <div class="buy-kicker">COBA DULU. GRATIS.</div>
+      <button class="buy-main lrc-free-start" type="button" onclick="startFreePreview()">MULAI 5 PERTANYAAN GRATIS →</button>
+      <div class="buy-note">±2 menit · tanpa registrasi · hasil awal langsung</div>
     </div>
 
     <div class="fit-panel">
@@ -315,13 +440,69 @@ body:not(.app-mode) #landing *::after {
     </div>
 
     <div class="buyer-access">
-      <div class="buyer-title">SUDAH MEMBELI?</div>
-      <div class="buyer-copy">Masukkan password akses untuk mulai.</div>
+      <div class="buyer-title">SUDAH PUNYA AKSES LENGKAP?</div>
+      <div class="buyer-copy">Masukkan password untuk langsung lanjut ke 18 situasi lengkap.</div>
       <div class="buyer-form">
         <input class="form-input" id="passwordInput" type="password" placeholder="Password akses" autocomplete="off">
         <button class="btn-primary" onclick="unlockQuiz()">MASUK →</button>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="screen lrc-preview-screen" id="freePreview">
+  <div class="lrc-preview-head">
+    <div class="lrc-preview-kicker">LEADERSHIP REALITY CHECK™ · GRATIS</div>
+    <div class="lrc-preview-count" id="freePreviewCount">1 / 5</div>
+    <div class="lrc-preview-progress"><span id="freePreviewProgress"></span></div>
+  </div>
+  <div id="freePreviewQuestion"></div>
+  <div class="fixed-bottom">
+    <button class="btn-next" id="freePreviewNext" onclick="nextFreePreview()" disabled>LANJUT →</button>
+  </div>
+</section>
+
+<section class="screen lrc-preview-screen" id="freePreviewResult">
+  <div class="lrc-result-wrap">
+    <div class="lrc-preview-kicker">HASIL AWAL LO</div>
+    <h2 class="lrc-preview-result-title">POLA LEADERSHIP LO<br><span>MULAI KELIHATAN.</span></h2>
+    <p class="lrc-preview-result-lead">Ini belum diagnosis tipe leadership lo. Tapi dari 5 situasi awal, sudah ada pola yang layak lo perhatikan.</p>
+
+    <div class="lrc-signal-card">
+      <small>SIGNAL AWAL</small>
+      <strong id="freeSignalTitle">—</strong>
+      <p id="freeSignalCopy">—</p>
+    </div>
+
+    <div class="lrc-tease-grid">
+      <div><span>01</span><b>Respons saat tim salah</b></div>
+      <div><span>02</span><b>Cara lo memberi arahan</b></div>
+      <div><span>03</span><b>Ruang yang lo kasih ke tim</b></div>
+    </div>
+
+    <div class="lrc-lock-card">
+      <div class="lrc-lock-icon">⌁</div>
+      <div>
+        <small>DI HASIL LENGKAP</small>
+        <h3>18 situasi · archetype dominan · blind spot · pola yang dilihat tim</h3>
+        <p>Preview gratis cuma membuka signal awal. Full assessment membaca pola lo lebih utuh dan mengeluarkan hasil personal.</p>
+      </div>
+    </div>
+
+    <a class="buy-main lrc-unlock-btn" href="https://lynk.id/the_40_reset/j0872ver3eoe/checkout" target="_blank" rel="noopener">BUKA HASIL LENGKAP →</a>
+    <div class="buy-note">Pembelian sekali · password akses dikirim setelah pembayaran</div>
+
+    <div class="buyer-access lrc-result-access">
+      <div class="buyer-title">SUDAH MEMBELI?</div>
+      <div class="buyer-copy">Masukkan password untuk lanjut ke 18 situasi lengkap.</div>
+      <div class="buyer-form">
+        <input class="form-input" id="passwordInputPreview" type="password" placeholder="Password akses" autocomplete="off">
+        <button class="btn-primary" onclick="unlockQuizFromPreview()">MASUK →</button>
+      </div>
+    </div>
+
+    <button class="lrc-text-btn" type="button" onclick="restartFreePreview()">Ulangi 5 pertanyaan gratis</button>
   </div>
 </section>
 
@@ -484,5 +665,141 @@ function showResult(){
   showScreen('result');
 }
 </script>
+
+<script id="lrc-free-preview-script">
+const LRC_FREE_QUESTIONS = [
+  {
+    q:"Saat tim bikin kesalahan yang cukup kelihatan, respons pertama lo paling sering apa?",
+    hint:"Pilih yang paling sering kejadian, bukan yang terdengar paling ideal.",
+    opts:[
+      ["Langsung gue koreksi detailnya supaya nggak kejadian lagi.",3],
+      ["Gue tanya dulu apa yang bikin itu terjadi.",1],
+      ["Gue ambil alih dulu biar cepat beres.",3],
+      ["Gue kasih ruang dia beresin, lalu kita review.",0]
+    ]
+  },
+  {
+    q:"Kalau hasil kerja tim belum sesuai ekspektasi, biasanya lo...",
+    hint:"Bayangin kondisi saat deadline lagi dekat.",
+    opts:[
+      ["Kasih contoh persis cara gue maunya.",3],
+      ["Jelasin outcome yang gue butuhkan, lalu kasih mereka cara sendiri.",0],
+      ["Cek progress lebih sering supaya nggak melenceng.",2],
+      ["Tunggu sampai mereka minta bantuan.",1]
+    ]
+  },
+  {
+    q:"Seberapa sering tim harus minta approval lo sebelum bergerak?",
+    hint:"Bukan SOP formalnya. Yang benar-benar terjadi sehari-hari.",
+    opts:[
+      ["Hampir semua hal penting harus lewat gue.",3],
+      ["Cukup sering, biar gue tahu semuanya.",2],
+      ["Untuk keputusan tertentu saja.",1],
+      ["Mereka punya batas keputusan yang jelas tanpa gue.",0]
+    ]
+  },
+  {
+    q:"Kalau ada anggota tim yang beda pendapat sama lo di meeting...",
+    hint:"Pilih respons yang paling natural buat lo.",
+    opts:[
+      ["Gue debat sampai jelas mana yang paling masuk akal.",2],
+      ["Gue dengar dulu, lalu minta dia jelasin datanya.",0],
+      ["Gue tetap putuskan cepat supaya meeting nggak melebar.",2],
+      ["Biasanya gue nggak masalah, tapi tetap gue arahkan ke keputusan gue.",3]
+    ]
+  },
+  {
+    q:"Setelah kasih tugas besar, pola lo biasanya...",
+    hint:"Yang dinilai bukan bagus atau buruk. Ini cuma membaca kecenderungan.",
+    opts:[
+      ["Sering check-in supaya kualitasnya tetap terjaga.",2],
+      ["Set checkpoint jelas lalu gue kasih ruang.",0],
+      ["Gue masuk lagi kalau mulai kelihatan salah arah.",1],
+      ["Kadang akhirnya gue kerjain sebagian sendiri.",3]
+    ]
+  }
+];
+
+let lrcFreeIndex = 0;
+let lrcFreeAnswers = [];
+let lrcFreeSelected = null;
+
+function startFreePreview(){
+  document.body.classList.add('free-preview-mode');
+  lrcFreeIndex = 0;
+  lrcFreeAnswers = [];
+  lrcFreeSelected = null;
+  renderFreePreview();
+  showScreen('freePreview');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderFreePreview(){
+  const item = LRC_FREE_QUESTIONS[lrcFreeIndex];
+  document.getElementById('freePreviewCount').textContent = `${lrcFreeIndex+1} / ${LRC_FREE_QUESTIONS.length}`;
+  document.getElementById('freePreviewProgress').style.width = `${((lrcFreeIndex+1)/LRC_FREE_QUESTIONS.length)*100}%`;
+  document.getElementById('freePreviewNext').disabled = true;
+  lrcFreeSelected = null;
+  document.getElementById('freePreviewQuestion').innerHTML = `
+    <div class="lrc-free-q">
+      <h2>${item.q}</h2>
+      <p>${item.hint}</p>
+      <div class="lrc-free-options">
+        ${item.opts.map((o,i)=>`
+          <button type="button" class="lrc-free-option" onclick="selectFreePreview(${i})">
+            <span class="n">${String.fromCharCode(65+i)}</span>
+            <span>${o[0]}</span>
+          </button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function selectFreePreview(i){
+  lrcFreeSelected = i;
+  document.querySelectorAll('.lrc-free-option').forEach((el,idx)=>el.classList.toggle('active',idx===i));
+  document.getElementById('freePreviewNext').disabled = false;
+}
+
+function nextFreePreview(){
+  if(lrcFreeSelected===null) return;
+  lrcFreeAnswers[lrcFreeIndex] = LRC_FREE_QUESTIONS[lrcFreeIndex].opts[lrcFreeSelected][1];
+  if(lrcFreeIndex < LRC_FREE_QUESTIONS.length-1){
+    lrcFreeIndex++;
+    renderFreePreview();
+    window.scrollTo({top:0,behavior:'smooth'});
+  } else {
+    showFreePreviewResult();
+  }
+}
+
+function showFreePreviewResult(){
+  const total = lrcFreeAnswers.reduce((a,b)=>a+b,0);
+  let title, copy;
+  if(total >= 11){
+    title = "KONTROL LO CUKUP KUAT";
+    copy = "Dari 5 situasi awal, lo cenderung cepat masuk ke detail, approval, atau cara kerja tim. Belum tentu salah — tapi dari bawah, pola ini bisa terasa lebih mengontrol daripada yang lo maksud.";
+  } else if(total >= 6){
+    title = "LO ADA DI AREA CAMPURAN";
+    copy = "Ada momen lo kasih ruang, tapi di situasi tertentu kontrol lo naik cukup cepat. Pola lengkapnya baru kelihatan kalau dibaca lintas lebih banyak situasi.";
+  } else {
+    title = "RUANG KE TIM CUKUP BESAR";
+    copy = "Dari 5 situasi awal, lo relatif memberi ruang, mendengar, dan membatasi intervensi. Tapi ini baru satu sisi leadership — blind spot lain belum ikut terbaca.";
+  }
+  document.getElementById('freeSignalTitle').textContent = title;
+  document.getElementById('freeSignalCopy').textContent = copy;
+  showScreen('freePreviewResult');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function restartFreePreview(){ startFreePreview(); }
+
+function unlockQuizFromPreview(){
+  const src = document.getElementById('passwordInputPreview');
+  const dst = document.getElementById('passwordInput');
+  if(dst) dst.value = src.value;
+  unlockQuiz();
+}
+</script>
+
 </body>
 </html>
