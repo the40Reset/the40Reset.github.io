@@ -401,6 +401,30 @@ body.free-preview-mode .topbar{background:rgba(5,8,13,.94)}
 }
 </style>
 
+
+<style id="returning-buyer-access-style">
+/* Returning buyers: keep access available without interrupting the free journey. */
+body:not(.app-mode) #landing .returning-buyer-link-wrap{
+  max-width:650px;margin:-.45rem auto 1.15rem;text-align:center;
+}
+body:not(.app-mode) #landing .returning-buyer-link{
+  appearance:none;border:0;background:transparent !important;box-shadow:none !important;
+  color:#6F6A5F;font-family:var(--font);font-size:.78rem;font-weight:700;
+  line-height:1.5;cursor:pointer;padding:.35rem .5rem;text-decoration:none;
+}
+body:not(.app-mode) #landing .returning-buyer-link span{
+  color:#9A7216;font-weight:900;
+}
+body:not(.app-mode) #landing .returning-buyer-link:hover span,
+body:not(.app-mode) #landing .returning-buyer-link:focus-visible span{
+  text-decoration:underline;text-underline-offset:3px;
+}
+body:not(.app-mode) #landing .returning-buyer-panel{
+  margin:0 auto 1.4rem !important;
+}
+body:not(.app-mode) #landing .returning-buyer-panel[hidden]{display:none !important;}
+</style>
+
 </head>
 <body>
 <div class="topbar" id="topbar">
@@ -439,8 +463,14 @@ body.free-preview-mode .topbar{background:rgba(5,8,13,.94)}
       <div class="fit-item">✓ Mau lihat pola kepemimpinan lo tanpa tes yang terasa seperti buku teks</div>
     </div>
 
-    <div class="buyer-access">
-      <div class="buyer-title">SUDAH PUNYA AKSES LENGKAP?</div>
+    <div class="returning-buyer-link-wrap">
+      <button class="returning-buyer-link" type="button" onclick="toggleBuyerAccess()" aria-expanded="false" aria-controls="landingBuyerAccess">
+        Sudah punya akses lengkap? <span>Masuk di sini →</span>
+      </button>
+    </div>
+
+    <div class="buyer-access returning-buyer-panel" id="landingBuyerAccess" hidden>
+      <div class="buyer-title">MASUK KE AKSES LENGKAP</div>
       <div class="buyer-copy">Masukkan password untuk langsung lanjut ke 18 situasi lengkap.</div>
       <div class="buyer-form">
         <input class="form-input" id="passwordInput" type="password" placeholder="Password akses" autocomplete="off">
@@ -545,6 +575,22 @@ function showScreen(id){
 
 function initScores(){
   Object.keys(ARCHETYPES).forEach(k=>scores[k]=0);
+}
+
+function toggleBuyerAccess(){
+  const panel = document.getElementById('landingBuyerAccess');
+  const trigger = document.querySelector('.returning-buyer-link');
+  if(!panel || !trigger) return;
+  const willOpen = panel.hasAttribute('hidden');
+  panel.toggleAttribute('hidden', !willOpen);
+  trigger.setAttribute('aria-expanded', String(willOpen));
+  if(willOpen){
+    requestAnimationFrame(()=>{
+      const input = document.getElementById('passwordInput');
+      if(input) input.focus({preventScroll:true});
+      panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
 }
 
 function unlockQuiz(){
